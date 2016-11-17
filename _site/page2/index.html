@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Teaching a Rhizome How to Signify</title>
-  <meta name="description" content="This is an example post showcasing the various features of Immaculate and Tufte CSS. Refer to the Markdown source of this post for a better understanding!">
+  <meta name="description" content="In which a rhizome learns how to love.
+">
 
-  <link rel="canonical" href="https://byrnehollander.com/rhizome/rhizome.html">
+  <link rel="canonical" href="https://byrnehollander.com/rhizome/page2/">
   <link rel="alternate" type="application/rss+xml" title="Teaching a Rhizome How to Signify" href="https://byrnehollander.com/rhizome/feed.xml">
 
   <script type="application/ld+json">
@@ -17,11 +18,12 @@
 {
   "@context": "http://schema.org",
   "@type": "NewsArticle",
-  "mainEntityOfPage": "https://byrnehollander.com/rhizome/rhizome.html",
+  "mainEntityOfPage": "https://byrnehollander.com/rhizome/page2/",
   "headline": "Teaching a Rhizome How to Signify",
-  "datePublished": "2016-11-17T00:00:00-05:00",
-  "dateModified": "2016-11-17T00:00:00-05:00",
-  "description": "This is an example post showcasing the various features of Immaculate and Tufte CSS. Refer to the Markdown source of this post for a better understanding!",
+  "datePublished": "2016-11-17T16:05:14-05:00",
+  "dateModified": "2016-11-17T16:05:14-05:00",
+  "description": "In which a rhizome learns how to love.
+",
   "author": {
     "@type": "Person",
     "name": "Byrne Hollander"
@@ -430,17 +432,28 @@ code {
   <body>
     
 
-    <article>
-
-  <!-- <h2 itemprop="name"><a href="" itemprop="url">Teaching a Rhizome How to Signify</a></h2> -->
-  <h2 itemprop="name">Teaching a Rhizome How to Signify</h2>
-
-  <div class="post-meta">
-    <time datetime="17 November 2016">17 November 2016</time>
-  </div>
+    <main>
 
   <section>
-    <p>This is an example post showcasing the various features of <a href="https://github.com/siawyoung/immaculate">Immaculate</a> and <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS</a>. Refer to the Markdown source of this post for a better understanding!</p>
+      <h1>Teaching a Rhizome How to Signify</h1>
+      <h3>In which a rhizome learns how to love.
+</h3>
+  </section>
+
+  <div>
+    
+      <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
+
+          <header>
+            <h2 itemprop="name"><a href="/index.html" itemprop="url">Teaching a Rhizome How to Signify</a></h2>
+          </header>
+
+          <div class="post-meta">
+            <time datetime="17 November 2016">17 November 2016</time>
+          </div>
+
+          <section itemprop="description">
+            <p>This is an example post showcasing the various features of <a href="https://github.com/siawyoung/immaculate">Immaculate</a> and <a href="https://github.com/edwardtufte/tufte-css">Tufte CSS</a>. Refer to the Markdown source of this post for a better understanding!</p>
 
 <p>And please feel free to modify Immaculate’s template files to your liking. Immaculate is extremely minimal as far as usual blogging features are concerned.</p>
 
@@ -452,16 +465,15 @@ code {
 
 <p>Here is a <strong>bold</strong>, an <em>italic</em>, and a <a href="/#">hyperlink</a>.</p>
 
-<p>Now, presenting to you a block quote with a Tufte-styled footer:</p>
+<p>Block quote with a Tufte-styled footer has been deleted.</p>
 
-<!-- problem with blockquote tag :( -->
-<!-- <blockquote><p>But say, my brothers, what can the child do that even the lion could not do? Why must the preying lion still become a child? The child is innocence and forgetting, a new beginning, a game, a self-propelled wheel, a first movement, a sacred "Yes." For the game of creation, my brothers, a sacred "Yes" is needed: the spirit now wills his own will, and he who had been lost to the world now conquers the world.</p><p class="footer">Friedrich Nietzsche, Thus Spoke Zarathustra</p></blockquote> -->
-
-<p>This is a normal-sized image.</p>
+<p><span class="marginnote">Graphic courtesy of Andrej Karpathy’s <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/"><em>The Unreasonable Effectiveness of Recurrent Neural Networks</em></a>.</span></p>
 
 <figure>
-  <amp-img width="600" height="400" layout="responsive" src="/assets/images/sushi.jpg"></amp-img>
+  <amp-img width="1329" height="416" layout="responsive" src="/assets/images/rnn1.jpg"></amp-img>
 </figure>
+
+<p>Each rectangle is a vector and arrows represent functions (e.g. matrix multiply). Input vectors are in red, output vectors are in blue and green vectors hold the RNN’s state (more on this soon). From left to right: <strong>(1)</strong> Vanilla mode of processing without RNN, from fixed-sized input to fixed-sized output (e.g. image classification). <strong>(2)</strong> Sequence output (e.g. image captioning takes an image and outputs a sentence of words). <strong>(3)</strong> Sequence input (e.g. sentiment analysis where a given sentence is classified as expressing positive or negative sentiment). <strong>(4)</strong> Sequence input and sequence output (e.g. Machine Translation: an RNN reads a sentence in English and then outputs a sentence in French). <strong>(5)</strong> Synced sequence input and output (e.g. video classification where we wish to label each frame of the video). Notice that in every case are no pre-specified constraints on the lengths sequences because the recurrent transformation (green) is fixed and can be applied as many times as we like.</p>
 
 <p>This is a full-width image.</p>
 
@@ -513,7 +525,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <p>Here is a code block<span id="side3" class="margin-toggle sidenote-number"></span>
       <span class="sidenote">I have not turned on syntax highlighting. Frankly, it can be distracting in this minimalistic environment.</span>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="n">beautiful_ruby_class</span>
+<div class="highlighter-rouge">
+  <pre class="highlight"><code><span class="k">class</span> <span class="n">beautiful_ruby_class</span>
   <span class="k">def</span> <span class="nf">initialize</span>
     <span class="n">do_some_magical_stuff</span>
   <span class="k">end</span>
@@ -525,15 +538,42 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </code></pre>
 </div>
 
-  </section>
+          </section>
 
-    <!-- <footer class="site-footer">
+      </article>
+    
+  </div>
+
+  <nav role="navigation">
+    
+    <div class="pagination">
+      
+        <a href="/">&laquo; Prev</a>
+      
+
+      
+        
+          <a href="/">1</a>
+        
+      
+        
+          <em>2</em>
+        
+      
+
+      
+        <span>&raquo;</span>
+      
+    </div>
+    
+  </nav>
+
+</main>
+
+<footer class="site-footer">
    <section class="copyright"><a href="mailto:byrne.a.hollander.17@dartmouth.edu?Subject=Nice%20rhizome!" target="_top">Send Byrne an email</a></section>
 </footer>
- -->
 
-  </div>
-</article>
 
   </body>
 </html>
