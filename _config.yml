@@ -1,0 +1,13 @@
+title: Teaching a Rhizome How to Signify 
+description: >
+  In which a rhizome learns how to love.
+baseurl: "/rhizome"
+url: "https://byrnehollander.com/rhizome"
+paginate:	1 # The number of posts to show per page on your homepage
+name: "Byrne Hollander"
+markdown: kramdown
+permalink: none
+kramdown:
+  parse_block_html: true
+gems:
+  - jekyll-paginate
