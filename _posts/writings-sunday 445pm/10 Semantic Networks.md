@@ -1,0 +1,1 @@
+the political-technical dynamics of information and computer technologies, especially as they pertain to networks of all types. As a way of getting at the crux of the rhizome’s value or what could possibly take its place. What type of meaning can we get from a network; turning unmassed information into a network
