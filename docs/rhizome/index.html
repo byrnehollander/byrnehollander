@@ -434,10 +434,55 @@ code {
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-87736562-1', 'auto');
   ga('send', 'pageview');
   </script>
+
+<script type="text/javascript">
+  function changeWindowWidth() {
+    var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+    var total="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZHBlb3BMZ2VjWWc','pagename','resizable,height=".concat(y.toString(), ",width=", (x/2).toString(), "'); return false;");
+    if (document.getElementById("psx")) {
+      document.getElementById("psx").setAttribute("onclick", total);
+      if (false) {
+        var el = document.getElementById("psx");
+        var nodes=[], values=[];
+        for (var att, i = 0, atts = el.attributes, n = atts.length; i < n; i++) {
+          att = atts[i];
+          nodes.push(att.nodeName);
+          values.push(att.nodeValue);
+        }
+        console.log(nodes);
+        console.log(values);
+        console.log(total);
+      }
+      return true;
+  } else {
+    setTimeout(changeWindowWidth, 100);
+    console.log("waiting");
+    return true;
+    }
+  };
+  </script>
+
+   <script type="text/javascript">
+  changeWindowWidth();
+  </script>
+
+
+
+<!-- 
+  var gamePath = "game.html?" + window.location.search.replace( "?", "" );
+document.getElementById("gameAnchor").setAttribute("href", gamePath);
+And add an id to your anchor:
+
+<a href="#" id='gameAnchor'>
+The javascript will get all GET parameters from the current url and then replace the href attribute in the element with an id of gameAnchor with your game.html concatenated with the GET parameters in the url. -->
+<!--   <script>
+var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth/2||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+</script> -->
+<!-- http://stackoverflow.com/questions/17894638/using-javascript-variable-on-html-a -->
+
 
 </head>
 
@@ -448,7 +493,6 @@ code {
 
   <section>
       <h1>Teaching a Rhizome How to Signify</h1>
-      <h3>In which a rhizome learns how to love.
 </h3>
   </section>
 
@@ -870,7 +914,9 @@ Poetics of the rhizome</p>
 <p id="burnett">Burnett, Kathleen. “<a href="http://pmc.iath.virginia.edu/text-only/issue.193/burnett.193">Toward a Theory of Hypertextual Design</a>.” Postmodern Culture 3.2 (1993): n. pag. Web.</p>
 <p id="delanda-history">DeLanda. <a href="https://www.dropbox.com/s/47bvnamtl7clvdb/DeLanda%2C%20Manuel.%20Deleuze%20History%20and%20Science%20%282010%29.pdf?dl=0"><em>Deleuze: History and Science</em></a>. X</p>
 <p id="deleuze-diff">Deleuze, Gilles. <a href="https://www.dropbox.com/s/y3yj3jwc47wdt24/Deleuze%2C%20Gilles.%20Difference%20and%20Repetition%20%281968%29.pdf?dl=0"><em>Difference and Repetition</em></a>. New York: Columbia UP, 1968. Print.X</p>
-<p id="deleuze-postscript">—. <a href="https://www.dropbox.com/s/950i92z72s0dpdg/Deleuze%2C%20Gilles.%20Postscript%20on%20the%20Societies%20of%20Control%20%281992%29.pdf?dl=0">“Postscript on the Societies of Control”</a>. X</p>
+<!-- <p id="deleuze-postscript">—. <a href="https://drive.google.com/open?id=0B2CC4lVHSR01ZHBlb3BMZ2VjWWc" target="_blank">“Postscript on the Societies of Control”</a>. X</p> -->
+<p id="deleuze-postscript">—. <a href id="psx" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZHBlb3BMZ2VjWWc','pagename','resizable,height=10,width=10'); return false;">“Postscript on the Societies of Control”</a></a>. 199X</p>
+<!-- https://andylangton.co.uk/blog/development/get-viewportwindow-size-width-and-height-javascript -->
 <p id="atp">Deleuze, Gilles and Guattari, Felix. <a href="https://www.dropbox.com/s/3var847r714lpay/Deleuze%2C%20Gilles%20and%20Guattari%2C%20Felix.%20A%20Thousand%20Plateaus%20%281980%29.pdf?dl=0"><em>A Thousand Plateaus</em></a> (1980)</p>
 <p id="dronsfield">Dronsfield, Jonathan. <a href="https://www.dropbox.com/s/52fwlz7llr596we/Dronsfield%2C%20Jonathan.%20Deleuze%20and%20the%20Image%20of%20Thought%20%282012%29.pdf?dl=0">“Deleuze and the Image of Thought”</a>. X</p>
 <p id="drucker">Drucker, Johanna. <em>Graphesis: Visual Forms of Knowledge Production</em>. Cambridge: Harvard UP, 2014. Print.</p>
