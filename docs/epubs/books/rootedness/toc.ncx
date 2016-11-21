@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="eng">
+  <head>
+    <meta content="957639c4-11c0-47a1-a493-d3ea87fb9af9" name="dtb:uid"/>
+    <meta content="3" name="dtb:depth"/>
+    <meta content="calibre (2.51.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Rootedness: The Ramifications of a Metaphor</text>
+  </docTitle>
+  <navMap>
+    <navPoint class="chapter" id="num_1" playOrder="1">
+      <navLabel>
+        <text>Title Page</text>
+      </navLabel>
+      <content src="text/part0001.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_2" playOrder="2">
+      <navLabel>
+        <text>Copyright Page</text>
+      </navLabel>
+      <content src="text/part0002.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_3" playOrder="3">
+      <navLabel>
+        <text>Dedication</text>
+      </navLabel>
+      <content src="text/part0003.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_4" playOrder="4">
+      <navLabel>
+        <text>Contents</text>
+      </navLabel>
+      <content src="text/part0005.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_5" playOrder="5">
+      <navLabel>
+        <text>Acknowledgments</text>
+      </navLabel>
+      <content src="text/part0006.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_6" playOrder="6">
+      <navLabel>
+        <text>Introduction</text>
+      </navLabel>
+      <content src="text/part0007_split_000.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_7" playOrder="7">
+      <navLabel>
+        <text>1 Welcome to the Rhizosphere</text>
+      </navLabel>
+      <content src="text/part0008_split_000.html"/>
+      <navPoint class="chapter" id="num_8" playOrder="8">
+        <navLabel>
+          <text>Some Thoughts on Metaphor</text>
+        </navLabel>
+        <content src="text/part0008_split_001.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_9" playOrder="9">
+        <navLabel>
+          <text>Generation Radix</text>
+        </navLabel>
+        <content src="text/part0008_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_10" playOrder="10">
+        <navLabel>
+          <text>Home Is Where the Root Is</text>
+        </navLabel>
+        <content src="text/part0008_split_003.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_11" playOrder="11">
+        <navLabel>
+          <text>Jung and Bachelard Go Deep: The Root as Subconscious Image</text>
+        </navLabel>
+        <content src="text/part0008_split_004.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_12" playOrder="12">
+        <navLabel>
+          <text>Radical Evil: Of Mandrakes and Wurzelmännchen</text>
+        </navLabel>
+        <content src="text/part0008_split_005.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_13" playOrder="13">
+      <navLabel>
+        <text>2 Radical Poetry</text>
+      </navLabel>
+      <content src="text/part0009_split_000.html"/>
+      <navPoint class="chapter" id="num_14" playOrder="14">
+        <navLabel>
+          <text>Ponge and the Plant’s Immobility</text>
+        </navLabel>
+        <content src="text/part0009_split_001.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_15" playOrder="15">
+        <navLabel>
+          <text>Into Thin Air: Celan’s “Radix, Matrix”</text>
+        </navLabel>
+        <content src="text/part0009_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_16" playOrder="16">
+        <navLabel>
+          <text>Guillevic’s Radical Trying</text>
+        </navLabel>
+        <content src="text/part0009_split_003.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_17" playOrder="17">
+        <navLabel>
+          <text>The Awkward Human: Levertov and Ecological Alienation</text>
+        </navLabel>
+        <content src="text/part0009_split_004.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_18" playOrder="18">
+      <navLabel>
+        <text>3 Roots and Transcendence</text>
+      </navLabel>
+      <content src="text/part0010_split_000.html"/>
+      <navPoint class="chapter" id="num_19" playOrder="19">
+        <navLabel>
+          <text>Verticality and the Root</text>
+        </navLabel>
+        <content src="text/part0010_split_001.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_20" playOrder="20">
+        <navLabel>
+          <text>Claudel’s Rooted Crucifix</text>
+        </navLabel>
+        <content src="text/part0010_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_21" playOrder="21">
+        <navLabel>
+          <text>Valéry and the Vegetal Brain</text>
+        </navLabel>
+        <content src="text/part0010_split_003.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_22" playOrder="22">
+        <navLabel>
+          <text>Inversion and Conversion</text>
+        </navLabel>
+        <content src="text/part0010_split_004.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_23" playOrder="23">
+        <navLabel>
+          <text>Monsieur Teste, Botanical Thinker</text>
+        </navLabel>
+        <content src="text/part0010_split_005.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_24" playOrder="24">
+        <navLabel>
+          <text>Tournier and the Upending of Western Culture</text>
+        </navLabel>
+        <content src="text/part0010_split_006.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_25" playOrder="25">
+      <navLabel>
+        <text>4 Saving Europe from Itself: Weil’s Enracinement and Heidegger’s Bodenständigkeit</text>
+      </navLabel>
+      <content src="text/part0011_split_000.html"/>
+      <navPoint class="chapter" id="num_26" playOrder="26">
+        <navLabel>
+          <text>Talk of Roots in the Air: La querelle du peuplier</text>
+        </navLabel>
+        <content src="text/part0011_split_001.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_27" playOrder="27">
+        <navLabel>
+          <text>Weil’s Fear of Abstraction</text>
+        </navLabel>
+        <content src="text/part0011_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_28" playOrder="28">
+        <navLabel>
+          <text>Heidegger the Terroiriste</text>
+        </navLabel>
+        <content src="text/part0011_split_003.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_29" playOrder="29">
+      <navLabel>
+        <text>5 Sartre, Phenomenology, and the Root</text>
+      </navLabel>
+      <content src="text/part0012_split_000.html"/>
+      <navPoint class="chapter" id="num_30" playOrder="30">
+        <navLabel>
+          <text>The Nausea-Inducing Root of Being</text>
+        </navLabel>
+        <content src="text/part0012_split_001.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_31" playOrder="31">
+        <navLabel>
+          <text>Sartre’s Autobiographical Tree</text>
+        </navLabel>
+        <content src="text/part0012_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_32" playOrder="32">
+        <navLabel>
+          <text>Phenomenology’s Search for Ground</text>
+        </navLabel>
+        <content src="text/part0012_split_003.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_33" playOrder="33">
+      <navLabel>
+        <text>6 Etymology and Essence: The Primeval Power of Word Roots The Etymological Obsession</text>
+      </navLabel>
+      <content src="text/part0013_split_000.html"/>
+      <navPoint class="chapter" id="num_34" playOrder="34">
+        <navLabel>
+          <text>German Ideological Etymology</text>
+        </navLabel>
+        <content src="text/part0013_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_35" playOrder="35">
+        <navLabel>
+          <text>Paulhan’s Etymological Skepticism</text>
+        </navLabel>
+        <content src="text/part0013_split_003.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_36" playOrder="36">
+        <navLabel>
+          <text>Derrida’s Deracination of Language</text>
+        </navLabel>
+        <content src="text/part0013_split_004.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_37" playOrder="37">
+        <navLabel>
+          <text>Blanchot and the Etymon’s Danger</text>
+        </navLabel>
+        <content src="text/part0013_split_005.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_38" playOrder="38">
+      <navLabel>
+        <text>7 From Rhizome to Vegetal Democracy The Cryptic Rhizome of Deleuze and Guattari</text>
+      </navLabel>
+      <content src="text/part0014_split_000.html"/>
+      <navPoint class="chapter" id="num_39" playOrder="39">
+        <navLabel>
+          <text>The Postmodern Plantation</text>
+        </navLabel>
+        <content src="text/part0014_split_002.html"/>
+      </navPoint>
+      <navPoint class="chapter" id="num_40" playOrder="40">
+        <navLabel>
+          <text>Neo-Paganism and Plant Democracy</text>
+        </navLabel>
+        <content src="text/part0014_split_003.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint class="chapter" id="num_41" playOrder="41">
+      <navLabel>
+        <text>Bibliography</text>
+      </navLabel>
+      <content src="text/part0015.html"/>
+    </navPoint>
+    <navPoint class="chapter" id="num_42" playOrder="42">
+      <navLabel>
+        <text>Index</text>
+      </navLabel>
+      <content src="text/part0016_split_000.html"/>
+    </navPoint>
+  </navMap>
+</ncx>
