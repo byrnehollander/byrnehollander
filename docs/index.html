@@ -465,8 +465,36 @@ code {
   };
   </script>
 
+  <script type="text/javascript">
+  function changeWindowWidth2() {
+    var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
+    var total="window.open('http://byrnehollander.com/epubs/rootedness/','pagename','resizable,height=".concat(y.toString(), ",width=", (x/2).toString(), "'); return false;");
+    if (document.getElementById("wx")) {
+      document.getElementById("wx").setAttribute("onclick", total);
+      if (false) {
+        var el = document.getElementById("wx");
+        var nodes=[], values=[];
+        for (var att, i = 0, atts = el.attributes, n = atts.length; i < n; i++) {
+          att = atts[i];
+          nodes.push(att.nodeName);
+          values.push(att.nodeValue);
+        }
+        console.log(nodes);
+        console.log(values);
+        console.log(total);
+      }
+      return true;
+  } else {
+    setTimeout(changeWindowWidth2, 100);
+    console.log("waiting");
+    return true;
+    }
+  };
+  </script>
+
    <script type="text/javascript">
   changeWindowWidth();
+  changeWindowWidth2();
   </script>
 
 
@@ -938,7 +966,7 @@ Poetics of the rhizome</p>
 <p>Shin also wrote a <a href="http://plato.stanford.edu/entries/diagrams/">Stanford entry on diagrams</a></p>
 <p id="sokal-bricmont">Sokal, Alan and Bricmont, Jean. <a href="https://www.dropbox.com/s/usjbyx5igtkmz8s/Sokal%2C%20Alan%20and%20Bricmont%2C%20Jean.%20Fashionable%20Nonsense%20-%20Postmodern%20Intellectuals%27%20Abuse%20of%20Science%20%281999%29.epub?dl=0">“Fashionable Nonsense: Postmodern Intellectuals’ Abuse of Science”</a></p>
 <p id="veltman">Veltman, Kim. “<a href="https://www.dropbox.com/s/4mduxm77yqaco6d/Veltman%2C%20Kim.%20Towards%20a%20semantic%20web%20for%20culture%20%282001%29.pdf?dl=0">Towards a semantic web for culture</a>” (2001)</p>
-<p id="wampole">Wampole, Christy. <a href="https://www.dropbox.com/s/a32k813ntw8pbwe/Wampole%2C%20Christy.%20Rootedness%20%282016%29.epub?dl=0"><em>Rootedness: The Ramifications of a Metaphor</em></a>. Chicago: U of Chicago, 2016. Print.</p>
+<p id="wampole">Wampole, Christy. <a href id="wx" onclick="window.open('http://byrnehollander.com/epubs/rootedness/','pagename','resizable,height=500,width=500'); return false;"><em>Rootedness: The Ramifications of a Metaphor</em></a>. Chicago: U of Chicago, 2016. Print.</p>
 <p id="wang">Wang, et al. “<a href="https://www.dropbox.com/s/06a6jja9843ljpj/Wang%2C%20et%20al.%20Generalized%20Autoencoder-%20A%20Neural%20Network%20Framework%20for%20Dimensionality%20Reduction%20%282014%29.pdf?dl=0">Generalized Autoencoder: A Neural Network Framework for Dimensionality Reduction</a>” (2014)</p>
 
 <h2 id="relevant-literature">Relevant Literature</h2>
