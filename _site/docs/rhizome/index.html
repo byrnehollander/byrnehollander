@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,minimum-scale=1">
-
-  <title>Teaching a Rhizome How to Signify</title>
+  <title>IN PROGRESS as of 1:28am 11/22/16</title>
+  <!-- <title>Teaching a Rhizome How to Signify</title> -->
   <meta name="description" content="In which a rhizome learns how to love.">
 
   <link rel="canonical" href="https://byrnehollander.com/rhizome">
@@ -429,7 +429,7 @@ code {
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async="" custom-element="amp-iframe" src="//genius.codes"></script>
+  <script src="//genius.codes"></script>
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -487,7 +487,7 @@ code {
   changeWindowWidth2();
   </script>
 
-  <script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+  <!-- <script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script> -->
 
 </head>
 
@@ -497,7 +497,7 @@ code {
     <main>
 
   <section>
-      <h1>Teaching a Rhizome How to Signify</h1>
+      <h1>**IN PROGRESS** Teaching a Rhizome How to Signify</h1>
       <h3><a href="mailto:byrne.a.hollander.17@dartmouth.edu?Subject=Nice%20rhizome!" target="_top">by Byrne Hollander</a></h3>
       <div class="post-meta">
             <time datetime="21 November 2016">21 November 2016</time>
@@ -509,7 +509,6 @@ code {
       <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
 
 <section itemprop="description">
-<h1 id="table-of-contents">Table of Contents</h1>
 <p><span class="marginnote"><amp-img width="400" height="530" src="http://i.imgur.com/QVau6mA.jpg"></amp-img>
 <a href="https://www.patreon.com/marcngui" target="_blank">Marc Ngui</a>, <em>the tracing should always be put back on the map</em></span></p>
 <ul>
@@ -525,7 +524,7 @@ code {
 
 <ul>
 <li><a href="#intertwingularity">Intertwingularity</a></li>
-<li><a href="#neural-networks-for-classification-and-dimensionality-reduction">Neural Networks <small>for classification and dimensionality reduction</small></a></li>
+<li><a href="#simulating-and-classifying">Simulating and Classifying</a></li>
 </ul></li>
 <li><a href="#a-thousand-plateaus-as-a-rhizome"><em>A Thousand Plateaus</em> as a rhizome</a></li>
 <li><a href="#this-post-as-a-rhizome">This post as a rhizome</a></li>
@@ -539,7 +538,7 @@ code {
 <!-- describe reading suggestions; literally want to quote chapters of other books in this page -->
 
 <h1 id="introduction">Introduction</h1>
-<p>In this project I aim to demystify Gilles Deleuze and Felix Guattari’s <a href="#rhizome-as-mystical-or-metaphor">rhizome</a> as described in their 1980 book <a href="" id="atx" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01dE9Ja1F6aDRmMXc','pagename','resizable,height=1000,width=500'); return false;"><em>A Thousand Plateaus</em></a>. I attempt to do so in a rather ambitious fashion–by applying their concept to this website as a whole. I treat this page as an assemblage I use to plug in seemingly disparate concepts. My main goal, perhaps, is to provide a vision for what a hyperliteral rhizome <em>might</em> look like. D&amp;G insist their rhizome is not a <a href="#rhizome-as-mystical-or-metaphor">metaphor</a> and simultaneously insist that any rhizome is too unstable to be represented, that “a rhizome is not amenable to any structural or generative model” (12). I suppose this project was born from my frustration with this notion that there is no way to visualize <span class="marginnote">However, don’t feel obligated to engage with this post linearly. I hope readers find their own way through this page and its hyperlinks. In fact, here’s a <a href="#diagrams-meaningfully-spatialize-relationships">link to the first section about diagrams</a>. After you could even go right to the <a href="#intertwingularity">section titled “Intertwingularity”</a> (I didn’t make this word up—-<a href="http://hyperland.com" target="_blank">the guy who coined ‘hypertext’</a> did. Unfortunately it didn’t catch on to the same degree). After that you could pop back in and finish the <a href="#introduction">introduction</a>? In fact, I think this might be the part where I take a detour to explain just what it is I’m trying to do here. One additional motivator for hyperlinks is the fact that (hopefully) this post will be read by people with a range of philosophical backgrounds; this will let people find their own entry point, let people who already understand trees skip over that, or those who are curious about deep learning can explore that topic first.</span> this “<a href="#the-rhizome-as-image-of-nomad-thought">image of thought</a>”. My impulse was to consider dynamic, algorithmically generated graphs (with GUIs) as appropriate visualizations: the diagram would be in constant flux as new information enters the system <em>and</em> can be manipulated by users (e.g., filtering out certain information, zooming, etc.) However, this seems to be a poor starting point for this paper: I haven’t motivated the problem, set the stakes, or considered what it would mean for these diagrams to supposedly represent rhizomes. For instance Gregoriou argues “The goal is not to represent the rhizome but to implant it in thought. The effect they [Deleuze and Guattari] are after is not the understanding of the rhizome but a functioning, a whole apparatus that connects disparate, linguistic and non-linguistic things” (<a href="" id="gre" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01aGd0VTI4bE5HeHM','pagename','resizable,height=1000,width=500'); return false;">“Commencing the Rhizome”</a> 240). Thus, I step back and propose a roadmap through which I hope to get to the crux of this problem.</p>
+<p>[<a href="#1">1</a>]In this project I aim to demystify Gilles Deleuze and Felix Guattari’s <a href="#rhizome-as-mystical-or-metaphor">rhizome</a> as described in their 1980 book <a href="" id="atx" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01dE9Ja1F6aDRmMXc','pagename','resizable,height=1000,width=500'); return false;"><em>A Thousand Plateaus</em></a>. I attempt to do so in a rather ambitious fashion–by applying their concept to this website as a whole. I treat this page as an assemblage to plug in seemingly disparate concepts. My primary goal is to provide a vision for what a hyperliteral rhizome <em>might</em> look like. D&amp;G insist their rhizome is not a <a href="#rhizome-as-mystical-or-metaphor">metaphor</a> and simultaneously insist that any rhizome is too unstable to be represented, that “a rhizome is not amenable to any structural or generative model” (12). I suppose this project was born from my frustration with this notion that there is no way to visualize <span class="marginnote">However, don’t feel obligated to engage with this post linearly. I hope readers find their own way through this page and its hyperlinks. In fact, here’s <a href="#bring-the-heat">where I think things really start to heat up</a>. After you could even go right to the <a href="#intertwingularity">section titled “Intertwingularity”</a> (I didn’t make this word up—-<a href="http://hyperland.com" target="_blank">the guy who coined ‘hypertext’</a> did. Unfortunately it didn’t catch on to the same degree). After that you could pop back in and finish the <a href="#introduction">introduction</a>? In fact, I think this might be the part where I take a detour to explain just what it is I’m trying to do here. One additional motivator for hyperlinks is the fact that (hopefully) this post will be read by people with a range of philosophical backgrounds; this will let people find their own entry point, let people who already understand trees skip over that, or those who are curious about deep learning can explore that topic first.</span> this “<a href="#the-rhizome-as-image-of-nomad-thought">image of thought</a>”. My impulse was to consider dynamic, algorithmically generated graphs (with GUIs) as appropriate visualizations: the diagram would be in constant flux as new information enters the system <em>and</em> can be manipulated by users (e.g., filtering out certain information, zooming, etc.) However, this seems to be a poor starting point for this paper: I haven’t motivated the problem, set the stakes, or considered what it would mean for these diagrams to supposedly represent rhizomes. For instance Gregoriou argues “The goal is not to represent the rhizome but to implant it in thought. The effect they [Deleuze and Guattari] are after is not the understanding of the rhizome but a functioning, a whole apparatus that connects disparate, linguistic and non-linguistic things” (<a href="" id="gre" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01aGd0VTI4bE5HeHM','pagename','resizable,height=1000,width=500'); return false;">“Commencing the Rhizome”</a> 240). Thus, I step back and propose a roadmap through which I hope to get to the crux of this problem.</p>
 
 <p>But before I do, I first provide a little guidance for navigating this page. It’s filled with hyperlinks<span id="side1" class="margin-toggle sidenote-number"></span>
       <span class="sidenote">I’m particularly proud of the <a href="#bibliography">bibliography</a> section (that is, its technical implementation)–anything that’s clickable opens a new window with the entire source document at your fingertips. A bunch of work went into this feature but I’ll spare you the technical details. I know I’m enabling copyright infringement, but I implore you to suspend disbelief and imagine legality (and, for some, ethics) is not a concern here. I promise that I <em>think</em> there’s a point to all this. See <a href="#intertwingularity">intertwingularity</a></span> and you may have noticed that an <code class="highlighter-rouge">Annotate</code> button pops up anytime you highlight text. I consider them a recognition of the impossibility of creating a standalone work that explains a given concept once and for all (cf. <em>rhizome</em>). While I admit there is some recklessness in this idea, I don’t think this instability implies any more chaos or disorganization than a typical academic paper.<span id="side2" class="margin-toggle sidenote-number"></span>
@@ -597,7 +596,7 @@ code {
 <p>The ultimate distinction Deleuze finds between nonphilosophy and philosophy is that true philosophy lacks a foundation from which to build– there is neither truth in human nature nor in the world. Likewise, Derrida’s trace is rejected for having a ‘Structure’– as radical as it may be, Deleuze argues it still has meaning because it traces a preexisting structure or genealogical inheritance. While Wampole claims that “the rhizome is not radically different from the root. It is still an embedded form, its pace of growth is the same, and it represents yet another instance of thinking botanically about thought” (223), she doesn’t take this idea of structure particularly seriously. To her it is simply a nonbinary, nonhierarchical epistemology. She says that its lack of structure means its “thinking takes place in the ground” (223).</p>
 
 <p><span class="marginnote"><amp-img width="315" height="500" src="http://i.imgur.com/qdYJiHJ.jpg"></amp-img>
-Haeckel’s <em>Pedigree of Man</em>. The tyranny is palpable.</span></p>
+Haeckel’s <em>Pedigree of Man</em>. Tyranny in its purest form.</span></p>
 
 <p>I think the important take away is that a graph of the root is iterating towards theoretically realizable edges (i.e., connections between concepts). Still it is a meaning not stable enough to subsist off. Likewise, it is not clear that concepts of different kinds can be on the same graph. Important to understand that the rhizome first signaled a break between Deleuze and Barthes / Derrida who believed in the “process of rewriting, reweaving, and grafting of all of the fragments and missing parts in a “Total Work or Magnum Opus”<span id="side2" class="margin-toggle sidenote-number"></span>
       <span class="sidenote">Lambert, <a href="#lambert"><em>In Search of a New Image of Thought</em></a>, 52.</span>. In other words, Barthes and Derrida’s philosophies imply that we are constantly in the process of delaying a totalizing image (at least while consciousness is out there). Still, it is about the structure of the world and what we are based off.</p>
@@ -607,23 +606,69 @@ Haeckel’s <em>Pedigree of Man</em>. The tyranny is palpable.</span></p>
 <p>Which brings me back to my initial question: <strong>How do you connect (i.e. create a map of) that which has no definitions between elements?</strong> I believe D&amp;G respond: we don’t; the universe does. They tell us: “<strong>There exists a map, that much is for sure. Everything is on the map. Everything is connected.</strong>” Yet they claim we cannot manifest its structure. Before I go any further, I must motivate the notion that it deeply matters if we believe this statement. Further, the statement has different meanings depending on if we conceive of the rhizome as metaphor or literally. In the next section, I consider the implications of each position and relate them back to the Internet.</p>
 
 <h2 id="rhizome-as-mystical-or-metaphor">Rhizome as mystical or metaphor</h2>
-<p>Some critics have argued that ATP should be recognized more for its poetics more than for its philosophy: “by replacing argument with a flurry of pictures, [D&amp;G] imagine they’ll change minds, since the human is such a visual creature. We no longer choose and commit to one picture; we accumulate and shuffle them” (Wapole 222). Wapole continues by arguing that this lack of argument implies a penchant for mysticism, which I hinted at in the previous paragraph. As a metaphor, this concept celebrates multiplicity and the dissolution of hierarchy and categories, and the horizontal proliferation of all aspects of life. These characteristics fundamentally influence how one experiences the world. I argue that the rhizome that is an “image of thought” is a metaphorical rhizome. Lambert seems to agree: “Deleuze and Guattari’s rhizomatic experiment might be judged today as a failure, given that it was perceived as too abstract and appeared to convince no one, particularly not philosophers themselves” (60).</p>
+<p>Some critics have argued that ATP should be recognized more for its poetics than for its philosophy: “by replacing argument with a flurry of pictures, [D&amp;G] imagine they’ll change minds, since the human is such a visual creature. We no longer choose and commit to one picture; we accumulate and shuffle them” (Wapole 222). Wapole continues by arguing that this lack of argument implies a penchant for mysticism, which I hinted at in the previous paragraph. As a metaphor, this concept celebrates multiplicity and the dissolution of hierarchy and categories, and the horizontal proliferation of all aspects of life. These characteristics fundamentally influence how one experiences the world. I argue that the rhizome that is an “image of thought” is a metaphorical rhizome. Lambert seems to agree: “Deleuze and Guattari’s rhizomatic experiment might be judged today as a failure, given that it was perceived as too abstract and appeared to convince no one, particularly not philosophers themselves” (60).</p>
 
-<p>Hard to separate into sections between computers, so be prepared</p>
+<p>If we choose to literalize this concept, we must grapple with how this concept is <em>actually created</em>. D&amp;G themselves didn’t want the rhizome to be treated as a metaphor. Gregoriou explains that the rhizome must be rescued from its “literary over-coding in a pedagogical discourse as a metaphor for excessive multiplicity and radical openness. <em>The rhizome must be made</em>” (246). I agree wholeheartedly that the rhizome must be made.</p>
 
-<p>can accumulate multiple possible pictures
-still possible with computers</p>
+<p>When you hyperliteralize the rhizome, you lose all metaphor (of a certain kind) in exchange for a different kind of abstraction. We can now think what it might take to define the structure for such a map. In <a href="" id="gap" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZDhEeUNOdXlqNWs','pagename','resizable,height=1000,width=500'); return false;"><em>Protocol</em></a>, Galloway argues that one major quality that disqualifies the Internet from being a rhizome is its protocol, i.e., that parts of the networks have designed systems for connecting and interacting with each other.</p>
+
+<blockquote>
+  <p>[Networks] are material technologies, sites of variable practices, actions, and movements. This is, perhaps, stated too strongly. Yes, metaphors do materialize and corporealize, and, in some sense, metaphor is consonant with language itself. But discussions of networks—-especially in cultural theory-—have too often slipped into “vapor theory,” eliding a specific consideration of the material substrate and infrastructure with a general discussion of links, webs, and globalized connectivity.</p>
+  <p class="footer">Thacker, Eugene. <a href="" id="gap" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZDhEeUNOdXlqNWs','pagename','resizable,height=1000,width=500'); return false;"><em>Foreword to Protocol</em></a> (xiii)</p>
+</blockquote>
+
+<p>The infrastructure is of the highest importance here. Once we have protocols, a true map from content to content is created. We must additionally create a scheme for placing value on the edges between nodes and then do something interesting with this graph, but protocols must be the first step.</p>
+<blockquote>
+  <p>Protocols do not perform any interpretation themselves; that is, they encapsulate information inside various wrappers, while remaining relatively indifferent to the content of information contained within. The consequences of this are legion. It means that protocological analysis must focus not on the sciences of meaning (representation/interpretation/ reading), but rather on the sciences of possibility (physics or logic).</p>
+  <p class="footer">Galloway, Alexander. <a href="" id="gap" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZDhEeUNOdXlqNWs','pagename','resizable,height=1000,width=500'); return false;"><em>Protocol</em></a> (52)</p>
+</blockquote>
+
+<p><span id="side11" class="margin-toggle sidenote-number"></span>
+      <span id="bring-the-heat" class="sidenote">I think my project really heats up right around here.</span>By positing the existence of a literal rhizome (and thus a map), D&amp;G implicitly argue that a protocol exists for adding <em>anything</em> to the graph and a function exists to evaluate the relationship between <em>anything</em> and <em>anything else</em>. While they insist that “[u]nlike a structure, which is defined by a set of points and positions, with binary relations between the points and biunivocal relationships between the positions, the rhizome is made only of lines: lines of segmentarity and stratification as its dimensions, and the line of flight or deterritorialization as the maximum dimension after which the multiplicity undergoes metamorphosis, changes in nature” and that “[t]hese lines, or lineaments, should not be confused with lineages of the arborescent type, which are merely localizable linkages between points and positions,” the six characteristics they use to define a rhizome do not support all of their assertions (22). They say everything is connected, though by lines and not lineages. But really, this definition of a rhizome is meaningless in my pursuit of visualizing a rhizome: they’ve already said every “rhizome pertains to a map that must be produced, constructed” (21). If every rhizome must have a corresponding graph, I will focus my energy there as graphs are an undeniably more stable concept than that of the rhizome. Graph terminology I will use from here on out:</p>
 
 <ul>
-  <li>Multiple simultaneously but constantly shifting—the idea of “time slices”</li>
+  <li>Every node <em><code class="highlighter-rouge">x</code></em> is anything that could be in a conceivable rhizome <em><code class="highlighter-rouge">r</code></em>.</li>
+  <li>Every node <em><code class="highlighter-rouge">y</code></em> is anything that could be in <em><code class="highlighter-rouge">r</code></em> and is not <em><code class="highlighter-rouge">x</code></em> (no duplicates in the rhizome).</li>
+  <li>I call an <em>edge</em> anything that links <code class="highlighter-rouge">node</code> <em><code class="highlighter-rouge">x</code></em> to <code class="highlighter-rouge">node</code> <em><code class="highlighter-rouge">y</code></em> in <em><code class="highlighter-rouge">r</code></em>.</li>
+  <li>Edge <em><code class="highlighter-rouge">weight</code></em> refers to the strength of a connection (in <code class="highlighter-rouge">units</code>).</li>
+  <li>Each edge’s <em><code class="highlighter-rouge">weight</code></em> is calculated by executing function <em>f</em> on the <code class="highlighter-rouge">start</code> and <code class="highlighter-rouge">goal</code> nodes (“<code class="highlighter-rouge">weight_xy</code> = <em>f</em> (<em><code class="highlighter-rouge">x</code></em>, <em><code class="highlighter-rouge">y</code></em>)”)</li>
+  <li>There is also a function <em>fp</em> that calculates the <em><code class="highlighter-rouge">cost</code></em> of traversing <code class="highlighter-rouge">path</code> <em><code class="highlighter-rouge">p</code></em> to get from <code class="highlighter-rouge">start</code> to <code class="highlighter-rouge">goal</code> (cost_xyp = <em>fp</em> (<em><code class="highlighter-rouge">x</code></em>, <em><code class="highlighter-rouge">y</code></em>, <em><code class="highlighter-rouge">p</code></em>))
+    <ul>
+      <li>This function exists so we can cluster nodes with strong connections.</li>
+    </ul>
+  </li>
+  <li>All my edges are directed (i.e., the edge from <em><code class="highlighter-rouge">x</code></em> to <em><code class="highlighter-rouge">y</code></em> might not have the weight as the edge from <em><code class="highlighter-rouge">y</code></em> to <em><code class="highlighter-rouge">x</code></em>).</li>
+  <li>A ‘line of flight’ is a vector or sequence of vectors that make the edge weights of a rhizome unstable</li>
 </ul>
 
-<p>Celebration of multiplicity, of dissolved categories, of the horizontalization of all aspects of life
-- No reason to not place things on a continuum in computational analysis</p>
+<p>While such a rhizome <em><code class="highlighter-rouge">r</code></em> must exist if we are to literalize the concept itself, we lack the protcol to create nodes and assign edge weights and path costs. Nevertheless, a protcol and algorithm must exist such that the <em><code class="highlighter-rouge">r</code></em> is constructed. The notion that a new rhizome is</p>
 
-<p>What would it take to define the structure for such a map? In <em>Protocol</em>, Galloway argues that one major quality that disqualifies the Internet from being a rhizome is its protocol, i.e., that parts of the networks have designed systems for connecting and interacting with each other.</p>
+<p>In spite of the heterogeneity of the nodes, each is generic enough to be comparable or they could not exist on the same assemblage. This seems tautological: if there is a mapping and they are connected, there must exist a method to compute connection or else they would not be connected. I think D&amp;G might agree with this, but perhaps mystify it by saying they are in constant motion and unstable so any connection is temporary or that they are connected by a function, but that function is unknowable. Makes me think of computability theory. But if it were not computable, how could relationships as such exist? (randomness and not computable - Chaitin’s constant) Further, there is a map. The universe’s algorithm <em>always</em> returns an answer.
+Further, it neglects heterogeneity by placing everything on the same level. While it does show that everything is on the same assemblage, it is a poor figure for representing a break from the root which was (I think) more homogeneous.</p>
 
-<p>Thus, can we create a universal protocol to describe connections? If there is no underlying truth and everything is in chaos, impossible. But we can create heuristics for defining similarity. None are absolutely verifiably true, but what is this notion that everything is mystically connected and there is no total? Always moving and with no total, but we define connections. This is an idea of pagerank and using hypertext to mark relationships between html pages. But the pages themselves have concepts- how do we separate them out? Thus, we have a gradient. In continuous space, we don’t need to specify who is closest, but everything’s relationship to everything else.</p>
+<p>I now argue that protcol, a scheme for linking content, and analysis of the resulting diagram must exist for all digital information.</p>
+
+<p>Per graph theory, we can convert horizontal movements (lines of flight) into nodes (semiotic chains) and vertices. So far, the rhizome image is holding up. But then we get this idea that every node is connected to every other node. This is unclear– is there a direct connection between each node or is it simply that there exists a path from <em>x</em> to <em>y</em>? I’ll give D&amp;G the benefit of the doubt and presume they mean the latter. (“any point of a rhizome can be connected to any other, and must be.” it’s ambiguous. actually doesn’t matter which method. if there’s a path through connection, value of that path can be the edge weight between vertex <em>x</em> and <em>y</em>. Still, it is easier to represent the relationships if we have paths rather than weighted graphs.) Still, how do we compare a strand of DNA to a painting? They would need to share some attributes, or for there to be a path that has enough attributes in common.</p>
+
+<p>This is exactly how Galloway argues the Internet is not rhizomatic– the universal algorithm that creates relations between nodes is protcol.</p>
+
+<p>He argues that a consistent connection between parts of the network is important. But this consisntency is itself asignifying</p>
+
+<p>Still, the rhizome is frequently treated metaphorically. It is less about what the map looks like but what is supposedly in it. In fact, the map is totally non-traditional: it is “composed not of units but of dimensions, or rather directions in motion”. And further defined as certainly <em>not</em> a trace.</p>
+
+<p>I now argue that rhizomes only lack protocol on the metaphorical level.</p>
+
+<p>Thought and being</p>
+
+<p>simultaneously units and wholes from bits to databases</p>
+
+<p>continuum</p>
+
+<p>hierarchical, categorizable and sequential</p>
+
+<p>In an important sense there are no “subjects” at all; there is only all knowledge, since the cross-connections among the myriad topics of this world simply cannot be divided up neatly</p>
+
+<p>Thus, we must create a protocol to describe connections in a rhizome. If we fail to compare artifacts of the same medium (e.g., text, picture, video), we never stood a chance. If we manage this, we need to compare across mediums. Therefore, just one heuristic function must be responsible for connecting picture <em>x</em> to picture <em>y</em>, picture <em>y</em> to picture <em>x</em>,  If there is no underlying truth and everything is in chaos, impossible. But we can create heuristics for defining similarity. None are absolutely verifiably true, but what is this notion that everything is mystically connected and there is no total? Always moving and with no total, but we define connections. This is an idea of pagerank and using hypertext to mark relationships between html pages. But the pages themselves have concepts- how do we separate them out? Thus, we have a gradient. In continuous space, we don’t need to specify who is closest, but everything’s relationship to everything else.</p>
 
 <p>In other words, the rhizome suggests the “subterranean” presence of connections; but theories of systems and emergent phenomena provide a more explicitly technological model to describe how these connections can be established, actualized, and experienced - this is the mystical?</p>
 
@@ -631,34 +676,27 @@ still possible with computers</p>
 
 <p>But that isn’t enough to separate the ideas about structure and heterogeneity. “A rhizome ceaselessly establishes connections between semiotic chains, organizations of power, and circumstances relative to the arts, sciences, and social struggles.” There is no proper territory, and moreover, no proper language. Signs of art can be placed in conjunction with signs of politics or organizations of power.</p>
 
-<p>If we choose to literalize this concept, we must grapple with how concepts are actually created. Don’t want it treated as a metaphor and “Gregoriou rightly explained that the rhizome must be rescued from its “literary over-coding in a pedagogical discourse as a metaphor for excessive multiplicity and radical openness. The rhizome must be made” (2004, p. 246, emphasis in origin). I think I agree. But they chose a bad subject to co-opt. It isn’t different enough from the root model and introduces its own kind of skepticism. How did this happen?</p>
+<ul>
+  <li>Supposed to be useful, after all; how is a rhizome different from a recommendation engine; a consideration of where to go next; top-down view can be instructive (see diagram section)</li>
+  <li>Application beyond the internet</li>
+</ul>
 
-<p>Hyperliteralizing
-When you hyperliteralize the rhizome, you lose all metaphor (of a certain kind) in exchange for a different kind of abstraction
-- Supposed to be useful, after all; how is a rhizome different from a recommendation engine; a consideration of where to go next; top-down view can be instructive (see diagram section)
-- Application beyond the internet</p>
+<p>Hard to separate into sections between computers, so be prepared</p>
 
-<p>Per graph theory, we can convert horizontal movements (lines of flight) into nodes (semiotic chains) and vertices. So far, the rhizome image is holding up. But then we get this idea that every node is connected to every other node. This is unclear– is there a direct connection between each node or is it simply that there exists a path from <em>x</em> to <em>y</em>? I’ll give D&amp;G the benefit of the doubt and presume they mean the latter. (“any point of a rhizome can be connected to any other, and must be.” it’s ambiguous. actually doesn’t matter which method. if there’s a path through connection, value of that path can be the edge weight between vertex <em>x</em> and <em>y</em>. Still, it is easier to represent the relationships if we have paths rather than weighted graphs.) Still, how do we compare a strand of DNA to a painting? They would need to share some attributes, or for there to be a path that has enough attributes in common. So in spite of the heterogeneity of the nodes, each is generic enough to be comparable or they could not exist on the same assemblage. This seems tautological: if there is a mapping and they are connected, there must exist a method to compute connection or else they would not be connected. I think D&amp;G might agree with this, but perhaps mystify it by saying they are in constant motion and unstable so any connection is temporary or that they are connected by a function, but that function is unknowable. Makes me think of computability theory. But if it were not computable, how could relationships as such exist? (randomness and not computable - Chaitin’s constant) Further, there is a map. The universe’s algorithm <em>always</em> returns an answer.
-Further, it neglects heterogeneity by placing everything on the same level. While it does show that everything is on the same assemblage, it is a poor figure for representing a break from the root which was (I think) more homogeneous.</p>
+<p>can accumulate multiple possible pictures
+still possible with computers</p>
 
-<p>This is exactly how Galloway argues the Internet is not rhizomatic– the universal algorithm that creates relations between nodes is protcol.</p>
-
-<blockquote>
-  <p>They are material technologies, sites of variable practices, actions, and movements. This is, perhaps, stated too strongly. Yes, metaphors do materialize and corporealize, and, in some sense, metaphor is consonant with language itself. But discussions of networks— especially in cultural theory—have too often slipped into “vapor theory,” eliding a specific consideration of the material substrate and infrastructure with a general discussion of links, webs, and globalized connectivity.</p>
-  <p class="footer">Thacker, Eugene. <a href="" id="gap" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZDhEeUNOdXlqNWs','pagename','resizable,height=1000,width=500'); return false;"><em>Foreword to Protocol</em></a> (xiii)</p>
-</blockquote>
-
-<p>He argues that a consistent connection between parts of the network is important. But this consisntency is itself asignifying</p>
-
-<blockquote>
-  <p>Protocols do not perform any interpretation themselves; that is, they encapsulate information inside various wrappers, while remaining relatively indifferent to the content of information contained within. The consequences of this are legion. It means that protocological analysis must focus not on the sciences of meaning (representation/interpretation/ reading), but rather on the sciences of possibility (physics or logic).</p>
-  <p class="footer">Galloway, Alexander. <a href="" id="gap" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01ZDhEeUNOdXlqNWs','pagename','resizable,height=1000,width=500'); return false;"><em>Protocol</em></a> (52)</p>
-</blockquote>
-
-<p>Still, the rhizome is frequently treated metaphorically. It is less about what the map looks like but what is supposedly in it. In fact, the map is totally non-traditional: it is “composed not of units but of dimensions, or rather directions in motion”. And further defined as certainly <em>not</em> a trace.</p>
+<ul>
+  <li>
+    <p>Multiple simultaneously but constantly shifting—the idea of “time slices”</p>
+  </li>
+  <li>
+    <p>No reason to not place things on a continuum in computational analysis</p>
+  </li>
+</ul>
 
 <figure>
-  <amp-img width="2000" height="1550" layout="responsive" src="/rhizomehttp://i.imgur.com/iCipIsC.jpg"></amp-img>
+  <amp-img width="2000" height="1550" layout="responsive" src="http://i.imgur.com/iCipIsC.jpg"></amp-img>
 </figure>
 
 <p>So every rhizome is a map is a network. We just don’t know the protocol. (Yes, under this new definition of rhizome, the Internet fulfills all the qualifications. I discuss possible diagrams for the Internet below.)</p>
@@ -746,17 +784,16 @@ To oversimplify, the rhizome functions through lateral proliferation rather than
 <p>Meaning exists to be found in a trace whereas a map creates meaning</p>
 
 <figure>
-  <amp-img width="400" height="400" layout="responsive" src="/rhizomehttp://i.imgur.com/z0i6Zj8.gif"></amp-img>
+  <amp-img width="400" height="400" layout="responsive" src="http://i.imgur.com/z0i6Zj8.gif"></amp-img>
 </figure>
 <!-- <figure><amp-img width="650" height="1000" layout="responsive" src="/rhizome/assets/images/sephirotic-tree.jpg"></amp-img></figure> -->
 <!-- <figure><amp-img width="2000" height="1200" layout="responsive" src="/rhizome/assets/images/map-of-internet-connected-devices.jpg"></amp-img></figure> -->
 <figure>
-  <amp-img width="720" height="400" layout="responsive" src="/rhizomehttp://i.imgur.com/rL88VpG.jpg"></amp-img>
+  <amp-img width="720" height="400" layout="responsive" src="http://i.imgur.com/rL88VpG.jpg"></amp-img>
 </figure>
 <p>Filtering on criteria</p>
 
 <p>highly recommend the graphics in <a href="" id="vsx" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01b1hrWVl0cTRkMDA','pagename','resizable,height=1000,width=500'); return false;"><em>Visual Complexity: Mapping Patterns of Information</em></a>. so beautiful but who do they mean things to? not dynamic</p>
-
 
 <!-- <figure><amp-img width="2000" height="1200" layout="responsive" src="/rhizomehttp://i.imgur.com/zV0oSTw.jpg"></amp-img></figure> -->
 
@@ -811,7 +848,19 @@ Lambert 57</p>
 
 <p>Network-as-diagram based on the Deluzean concept of diagram; “Protocol considers networks through a “diagram,” a term borrowed from Gilles Deleuze. Protocol considers first a network as a set of nodes and edges, dots and lines. The dots may be computers (server, client, or both), human users, communities, LANs, corporations, even countries. The lines can be any practice, action, or event effectuated by the dots (downloading, emailing, connecting, encrypting, buying, logging on, port scanning). With this basic “diagram” you can do a number of things. You can connect the dots—all of them—making a totally connected, distributed network with more than one path to the destination. You can also disconnect dots, even delete dots (no paths, no destination). You can filter out which dots are connected to the network. You can create portals for the addition of future dots. You can designate which kinds of lines you want between the dots (for not all lines are equal; some diverge, flee; others converge, coalesce). In short, a network-as-diagram offers all sorts of possibilities for organization, regulation, and management.”</p>
 
-<div class="x"><p data-height="500" data-theme-id="light" data-slug-hash="aNWGdQ" data-default-tab="result" data-user="mattrothenberg" data-embed-version="2" data-pen-title="Network Visualization" class="codepen">See the Pen <a href="http://codepen.io/mattrothenberg/pen/aNWGdQ/">Network Visualization</a>. Go drag stuff around!</p></div>
+<!-- <p data-height="500" data-theme-id="light" data-slug-hash="aNWGdQ" data-default-tab="result" data-user="mattrothenberg" data-embed-version="2" data-pen-title="Network Visualization" class="codepen">See the Pen <a href="http://codepen.io/mattrothenberg/pen/aNWGdQ/">Network Visualization</a>. Go drag stuff around!</p> -->
+
+<iframe height='500' scrolling='no' title='Network Visualization' src='//codepen.io/mattrothenberg/embed/aNWGdQ/?height=500&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 70%;'>Go drag stuff around!
+</iframe>
+
+<!-- <amp-iframe width="500"
+      height="281"
+      layout="responsive"
+      sandbox="allow-scripts allow-same-origin allow-popups"
+      allowfullscreen
+      frameborder="0"
+      src="https://codepen.io/mattrothenberg/embed/aNWGdQ/?height=500&theme-id=0&default-tab=js,result&embed-version=2">
+  </amp-iframe> -->
 
 <ul>
   <li>Treating the rhizome as a network with material substrate and infrastructure; lack general discussion of its constituent parts in the book; so allow me to be so bold as to provide a generalized theory for protocol</li>
@@ -870,13 +919,15 @@ Deeply intertwingled</span></p>
 Ordinary hypertext</span></p>
 
 <figure>
-  <amp-img width="539" height="399" layout="responsive" src="/rhizomehttp://i.imgur.com/hn14ZFb.jpg"></amp-img>
+  <amp-img width="539" height="399" layout="responsive" src="http://i.imgur.com/hn14ZFb.jpg"></amp-img>
 </figure>
 
 <p>What does it mean for hyperlinks to create meaning?
 Alternative ways to conceive of the Internet</p>
 
-<h2 id="neural-networks-for-classification-and-dimensionality-reduction">Neural Networks for classification and dimensionality reduction</h2>
+<!-- <h2 id="neural-networks-for-classification-and-dimensionality-reduction">Neural Networks for classification and dimensionality reduction</h2> -->
+<h2 id="simulating-and-classifying">Simulating and Classifying</h2>
+
 
 <blockquote>
   <p>protocol not only installs control into a terrain that on its surface appears actively to resist it, but in fact goes further to create <em>the mostly highly controlled mass media hitherto known</em></p>
@@ -906,7 +957,7 @@ generative - having the power or function of generating, originating, producing,
 <p><span class="marginnote">Graphic courtesy of Andrej Karpathy’s <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/"><em>The Unreasonable Effectiveness of Recurrent Neural Networks</em></a>.</span></p>
 
 <figure>
-  <amp-img width="1329" height="416" layout="responsive" src="/rhizomehttp://i.imgur.com/YgXC6E8.jpg"></amp-img>
+  <amp-img width="1329" height="416" layout="responsive" src="http://i.imgur.com/YgXC6E8.jpg"></amp-img>
 </figure>
 
 <p>no perfect representation of thought; only models. how good will they be? I don’t know.</p>
@@ -991,9 +1042,8 @@ Future work:
 <p id="zdebik">Zdebik, Jakub.. <a href="" id="was" onclick="window.open('https://drive.google.com/open?id=0B2CC4lVHSR01dWlVZXRlOElvSXc','pagename','resizable,height=1000,width=500'); return false;"><em>Deleuze and the Diagram</em></a>. (2012)</p>
 
 <h2 id="relevant-literature">Relevant Literature</h2>
-<p><a href="https://drive.google.com/drive/folders/0B2CC4lVHSR01aTBBVGtWTzh1UnM">Not yet organized, but here</a></p>
-<p><span id="side10" class="margin-toggle sidenote-number"></span>
-      <span class="sidenote">My friend joked that this phrase could be the title of his memoir. For that reason alone, I’m keeping this section largely external to this assemblage.</span></p>
+<p><a href="https://drive.google.com/drive/folders/0B2CC4lVHSR01aTBBVGtWTzh1UnM">Not yet organized, but here</a><span id="side10" class="margin-toggle sidenote-number"></span>
+      <span class="sidenote">My friend joked that this phrase could be the title of his memoir. For that reason alone, I’m keeping this section as is.</span></p>
 
 
           </section>
