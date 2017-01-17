@@ -1,0 +1,435 @@
+<!-- <script async custom-element="amp-iframe" src="https://genius.codes"></script> -->
+
+---
+layout: post
+title: Teaching a Rhizome How to Signify12
+---
+# Table of Contents
+
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-rhizome-as-image-of-nomad-thought">The Rhizome as Image of Nomad Thought</a>
+
+<ul>
+<li><a href="#the-metaphor">The Metaphor</a></li>
+<li><a href="#the-tree">The Tree</a></li>
+<li><a href="#the-radicle-system-or-fascicular-root">The radicle-system or fascicular root</a></li>
+<li><a href="#the-rhizome">The rhizome</a></li>
+<li><a href="#implications-and-use">Implications and use</a></li>
+<li><a href="#a-signifying-semiotics">A-signifying semiotics</a></li>
+<li><a href="#demystifying-the-rhizome">Demystifying the rhizome</a></li>
+</ul></li>
+<li><a href="#how-diagrams-meaningfully-spatialize-relationships">How diagrams meaningfully spatialize relationships</a></li>
+<li><a href="#semantic-networks">Semantic networks</a></li>
+<li><a href="#network-protocols-and-the-rhizome">Network protocols and the rhizome</a></li>
+<li><a href="#how-the-internet-is-rhizomatic">How the Internet is rhizomatic</a>
+
+<ul>
+<li><a href="#galloways-protocols">Galloway&#8217;s <em>Protocols</em></a></li>
+<li><a href="#intertwingularity">Intertwingularity</a></li>
+<li><a href="#dimensionality-reduction">Dimensionality reduction</a></li>
+<li><a href="#recurrent-neural-networks-for-classification">Recurrent Neural Networks for classification</a></li>
+</ul></li>
+<li><a href="#a-thousand-plateaus-as-a-rhizome"><em>A Thousand Plateaus</em> as a rhizome</a></li>
+<li><a href="#this-post-as-a-rhizome">This post as a rhizome</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#bibliography">Bibliography</a></li>
+<ul>
+<li><a href="#references">References</a></li>
+<li><a href="#relevant-literature">Relevant Literature</a></li></ul>
+</ul>
+
+# Introduction
+{% marginnote margin1 %} 
+{% image /assets/images/tracing.jpg 400 530 raw %}
+[Marc Ngui](https://www.patreon.com/marcngui), *the tracing should always be put back on the map*
+{% endmarginnote %}
+In this essay I aim to demystify Deleuze|Guattari’s rhizome as described in their 1980 book *A Thousand Plateaus*. I begin by summarizing what I consider the spirit of the rhizome project and how it has been applied as a ’tool.’ I explore what it means to think rhizomatically, why one would do so, and its position as either metaphor or literal. I then challenge the definitions of a rhizome and assumptions the authors make to argue that a rhizome’s distinctions from the fascicular root are exaggerated. I employ DeLanda’s technical definitions of Deleuzean concepts to demystify the rhizome. I dwell on the subject of a-signfiying semiotics in order to understand the tangible utility of rhizomes (*clarify*). I continue with a discussion of graphs and visual knowledge. I posit that images can produce knowledge and that learning to read the meaning-producing argument structures of graphical forms implies signification. I further explore the notion of how diagrammatic images spatialize relations in a meaningful way and present Warren Sack’s conversation map and GUI as an early example of dynamic meaning production. I briefly discuss the idea of [semantic networks](http://www.iva.dk/bh/Core%20Concepts%20in%20LIS/articles%20a-z/semantic_networks.htm) as rhizomatic.
+
+I then consolidate these tools to argue how the Internet is rhizomatic. My main idea is if it is a rhizome, what does it mean? To quote Werner Herzog, “Does the Internet dream of itself?” I explore Ted Nelson’s notion of interwingularity and his vision of a hyper contextual Internet in order to provide a tangible example of how we might represent the interconnectedness of all things. I give examples of static visualizations of the Internet and the knowledge that can be gleaned from this visual representation, what is lost, and what can be gained from other methods.
+
+I continue with a discussion of dimensionality reduction. I challenge D&G’s notion that all is lost in such a reduction and then consider various methods for achieving reduction. I briefly note the politics of data and reduction. I consider deep learning methods as a way of continually showing change where information from previous generations informs the next one. 
+
+Next, I consider the notion that ATP itself is a rhizome. I consider how its status as closed system interacts with the open system that is its connections— how the dimensions of time and space manipulate their meanings. With the examples of the internet and ATP now fleshed out, I consider the prospect of creating protocols that generalize knowledge and signify both visually and textually. What would it mean for this post itself to be rhizomatic? That it can be negotiated non-linearly? I conclude with a list of references and provide source material when possible (definitely a breach of copyright law - can see them all [here](https://www.dropbox.com/sh/sqcp8cy6wyqpcjh/AADNMp_5haQBLpWzk025u-k0a?dl=0)). 
+
+
+# The Rhizome as Image of Nomad Thought
+Structure seems to be the overarching theme of *A Thousand Plateaus*. It is a book rife with geological and botanical metaphors, a book that seeks to explain how space and relations within this space works. It is a book of constant motion and instability. It is a book they claim is a rhizome with 'plateaus' in place of chapters. "Each plateau can be read starting anywhere and can be related to any other plateau." (22) Further, their rhizome "has neither beginning nor end, but always a middle (*milieu*) from which it grows and which it overspills". (21) While they admit "it's not easy to see things in the middle, rather than looking down on them from above or up at them from below, or from left to right or right to left". Rhizomatic writing is not written from a sedentary view: they assemble heterogeneity and lack a fundamental unity. Thus, the question of where to begin seems strikingly lacking for nomadic writing. What can be our foundation if we begin *in media res*?
+
+(Add in more notes about the start)
+
+Perhaps the start is never the beginning-- how can we tackle the issue of presuppositions? In *Difference and Repetition*, Deleuze argues that most of philosophy was founded on the notion of common sense as *cogitatio natura universalis* (good will of the thinker and good nature of thought). He calls this thinking the 'pre-philosophical image of thought' because it fails to question the nature of thought and being. This particular image of thought implies that "thought has an affinity with the true; it formally possesses the true and materially wants the true. It is in terms of this image that everybody knows and is presumed to know what it means to think." This Image, according to Deleuze, "prejudges everything" and thus can be called a "dogmatic, orthodox or moral image". In questioning the absoluteness of morality, Deleuze concludes that the conditions of a philosophy which would be without any kind of presuppositions are such: instead of being supported by the moral Image of thought, it would take as its point of departure a radical critique of this Image and the 'postulates' it implies. It would find its difference or its true beginning, not in an agreement with the pre-philosophical Image but in a rigorous struggle against this Image, which it would denounce as non-philosophical. As a result, it would discover its authentic repetition in a thought without Image." (page 131)
+
+{% marginnote margin1 %} 
+I really hope this is enough motivation to keep reading!
+{% endmarginnote %}
+Twelve years later, however, it appears that thought *can* have an image that is not pre-philosophical. And it is the notion that philosophy begins with the rhizome.
+
+While it appears that the rhizome is our beginning, I must set the stage with a discussion of botany. As Christy Wampole illustrates in *Rootedness*, botanical metaphors--especially those of the tree and root--have long been used to efficiently say what is otherwise extremely difficult or even impossible to communicate. Further motivating the importance of botanical terminology, Wapole notes critical theory's reintroduction of the idea that "thought itself is botanical in nature and that humans should look toward plants as a model for dwelling in the world, because they provide an alternate paradigm for the treatment of space, time, consumption, and death." {% sidenote side1 Wampole, [*Rootedness*](#wampole), 4-5. %}
+
+I now, as Deleuze and Guattari do in the introduction to *A Thousand Plateaus* describe the three major botanical figures: the [Tree](#the-tree), [the Root](#the-radicle-system-or-fascicular-root), and the [Rhizome](#the-rhizome). But before I do, want a brief aside about the metaphor.
+
+### The metaphor
+
+“The first point is that networks are not metaphors. As Galloway states, “Protocols do not perform any interpretation themselves; that is, they encapsulate information inside various wrappers, while remaining relatively indifferent to the content of information contained within.” The concept of “protocol” is thus meant to demonstrate the nonmetaphorical quality of networks. Or, put another way, the concept of protocol shows the predilection for general discussion of networks in terms of general tropes. Networks are not tropes for notions of “interconnection.” They are material technologies, sites of variable practices, actions, and movements. This is, perhaps, stated too strongly. Yes, metaphors do materialize and corporealize, and, in some sense, metaphor is consonant with language itself. But discussions of networks— especially in cultural theory—have too often slipped into “vapor theory,” eliding a specific consideration of the material substrate and infrastructure with a general discussion of links, webs, and globalized connectivity.”
+
+"Rather, this abstract-but-real is the network that is always enacted and always about to enact itself. One can pose the question: Is a network a network if it is not being used?”
+- Turn it into a network in order to use the idea as more than as a non-virtual abstract concept
+- “The network as real-but-abstract may involve “information” as an immaterial entity, but that information always works toward real effects and transformations, no matter how localized.”
+
+“What are some common metaphoric uses of networks that Protocol resists? One is that networks are synonymous with connectivity (and that connectivity is always good). Tropes of links, nets, webs, and a general relationality also stem from this use of networks. Pop science writing on network science or the gee-whiz rhetoric of magazines such as Wired often adopt a quantitative politics: If information wants to be free, then more connectivity equals more freedom.”
+“But the concept of “protocol” is as concerned with disconnection as it is with connectivity. The moment of disconnectivity is the moment when protocol most forcefully displays its political character. Disconnectivity can occur in a number of ways, from a personal dialup disconnected due to a time limit imposed by a commercial ISP, to the management (or surveillance) of large-scale networks involved in political activism. The analysis in part III below of hacking, computer viruses, and the tactical appropriation of both by cyberfeminism provides a set of examples for how disconnectivity can be as instrumental for protocol’s (mal)functioning as is connectivity.”
+
+Do the politics of this disconnectivity affect the Bhopal community itself? Do policies regarding information content (DMCA) actually encourage such regulation? These are complex questions which have arisen from this event, one that has been made possible by the dual nature of the Internet that Protocol points to: its horizontality (community networks; TCP/IP) and its verticality (its stratification; DNS).
+
+
+## The Tree
+{% marginnote margin1 %} 
+{% image /assets/images/haeckel-pedigree-of-man-scaled.jpg 315 500 raw %}
+Haeckel's *Pedigree of Man*. The tyranny is palpable.
+{% endmarginnote %}
+
+{% image /assets/images/book-root.jpg 2000 1550 %}
+<!-- {% image /assets/images/tree-human-knowledge.png 1163 1596 %} -->
+
+{% blockquote Deleuze and Guattari, A Thousand Plateaus (5) %}
+Binary logic is the spiritual reality of the root-tree.
+{% endblockquote %}
+
+TO-DO: describe tree, its historical uses, shortcomings
+"The binary logic of dichotomy has simply been replaced by biunivocal rela- tionships between successive circles. The pivotal taproot provides no bet- ter understanding of multiplicity than the dichotomous root. One operates in the object, the other in the subject. Binary logic and biunivocal relation- ships still dominate psychoanalysis (the tree of delusion in the Freudian interpretation of Schreber's case), linguistics, structuralism, and even information science."
+
+elementary way to organize information 
+
+
+offered as an alternative to the constricting tree structure and dualism dominant in what Deleuze and Guattari call "state philosophy" (Massumi, 1987a: xi):
+
+## The radicle-system or fascicular root
+
+{% marginnote margin2 %} 
+{% image /assets/images/seedling-morphology.jpg 315 415 raw %}
+Roots
+{% endmarginnote %}
+
+TO-DO: describe root, and its historical uses
+
+
+
+## The rhizome
+The rhizome is in many ways similar to the fasicular root.
+
+I note that D&G assert that their rhizome is no metaphor.
+
+Wampole 171: “to clear and consolidate ground, to lay foundations” references to D&G What is Philosophy?
+
+Wampole 216: “Ihab Hassan, Emily Apter, and others” have asserted that the twentieth century represents a shift from the root-based epistemology to a rhizomatic one
+
+Thus, I get to the crux of my argument. The concept of the rhizome has a basis for claiming it is not metaphorical, but what do these assumptions mean? How does it really differ from a root and how can we visualize it?
+
+In botany, a **rhizome** is a horizontal underground plant stem capable of producing the shoot and root systems of a new plant. Below is an illustration of the network structure that enables mushrooms to absorb nutrients from their environment.
+
+{% marginnote margin2 %} 
+Richard Giblett's [*Mycelium Rhizome*](http://www.richardgiblett.com/myceliumrhizome.html), 2009
+{% endmarginnote %}
+{% image /assets/images/rhizome.jpg 800 395 %}
+
+Deleuze and Guattari begin *A Thousand Plateaus* with an appeal to the rhizome as an image of thought.
+
+
+Thus, it is here where we must start. 
+
+
+If we are to consider the notion that the "concept of the rhizome represents the literal translation of the... image of thought into modern philosophy" 
+an image of thought that takes the form of a vast and intricate herbal (as Proust says)
+
+
+it represents an externalization of the machinic dimension of Deleuze and Guattari’s philosophy, a machine that literally presents us with the following situation: Contemporary philosophy is an assemblage that presupposes a new image of thought on the plane of immanence." {% sidenote side2 Lambert, [*In Search of a New Image of Thought*](#lambert), 45. %}
+
+
+is a concept to understand the image of thought. Shatter linearity - More total for being fragmented
+Intention is to shatter "the linear unity of knowledge", stating that "this time, the principal root has aborted, or its tip has been destroyed: an immediate, indefinite multiplicity of secondary roots grats unto it and undergoes aflourishing development (6). Replacing "root-cosmos" with "radicle-chaosmos" provide radical critical perspectives on recent semantic visions to be realized by means of computational ontologies, which fuel the Semantic Web vision.
+
+Rhizome as a style of thought
+To oversimplify, the rhizome functions through lateral proliferation rather than tree-like vertical extension. 
+
+Deleuze and Guattari themselves caution that "the root-tree and canal-rhizome are not two opposed models" (20).  The concept of the rhizome was set up precisely to challenge dichotomous branching; yet by placing rhizome against tree, how can we ignore the self-contradictory dualism? 
+{% image /assets/images/intro-paragraph-19.jpg 2000 1550 %}
+
+[t]he problem of writing: in order to designate something exactly, anexact [sic] expressions are utterly unavoidable. We invoke one dualism only in order to challenge another.  We employ a dualism of models only in order to arrive at a process that challenges all models.  (20)
+
+The relation of the rhizome to the tree is not one of dualism but of territorialization, but we shall return to this following a description of the six principles of the rhizome itself.
+
+The six principles of the rhizome as listed by Deleuze and Guattari are as follows:
+
+- connection 
+- heterogeneity 
+{% image /assets/images/connection-heterogeneity.jpg 2000 1550 fw %}
+- multiplicity 
+{% image /assets/images/multiplicities.jpg 2000 1550 fw %}
+- asignifying rupture 
+{% image /assets/images/asignifying-rupture.jpg 2000 1550 fw %}
+- cartography 
+- decalcomania 
+{% image /assets/images/cartography-decalcomania.jpg 2000 1550 fw %}
+
+Goodchild reminds us that "these principles do not remain separate but mix with each other and proliferate" (1996: 85). In other words, we should bear in mind that they do not function in isolation, but only together as a rhizome. The rhizomatic method would ideally involve negotiating through all of these principles simultaneously so that they can proliferate in the reader's mind; but for reasons mentioned in the Introduction, the paper version of this thesis will stay with the linear mode of explication, while the HTML version will enable a nonlinear negotiation by the reader.
+
+Wampole 252 “To specialize is to decontextualize”  Specialization is in response to the simple fact that the world and what is knowable have become too big for the brain to handle. We favor a more manageable smallness over unwieldy largeness and thus break civilization down into composites. By focusing on what is immediate and summarizable, we forfeit our own context. Without context meaning breaks down
+
+
+"What kind of image is to be deduced from thought? How can thinking be determined by the image, and where does image first acquire its power over thought—that is, to induce what is called "thinking" to occur within the subject? Following the thesis offered in chapter 1, I would argue that concept of the rhizome represents the literal translation of the Proustian image of thought into modern philosophy, an image of thought that takes the form of a vast and intricate herbal (as Proust says). More importantly, it represents an externalization of the machinic dimension of Deleuze and Guattari’s philosophy, a machine that literally presents us with the following situation: Contemporary philosophy is an assemblage that presupposes a new image of thought on the plane of immanence." 
+<!-- {% sidenote side1 Lambert, [*In Search of a New Image of Thought*](#lambert), 45. %} -->
+
+## Implications and use
+Wampole 216: “Rhizome-centered thinking, which breaks the root down and the power structures it represents into an unpredictable, undecidable abstraction, created the conditions under which the human loses its status as the universal sovereign over all other life forms”
+
+Wampole 218: the rhizome seemed to be a living alternative to hierarchy, linearity, and institutionality. As a tool, can be used to mean whatever you want
+
+## A-signifying semiotics
+
+{% marginnote margin2 %} 
+{% image /assets/images/asignifying-semiotics-margin.png 400 325 raw %}
+Chart
+{% endmarginnote %}
+
+Also see [metaphors](#the-metaphor)
+algorithm as asignifying
+
+I want to ascertain if the rhizome is inherently a-signifying and thus if it is possible (or even productive) to create a model to physically represent a rhizome.
+
+In A Thousand Plateaus, the rhizome is defined as a nonsignifying system. Further, it is not a structure as it is made only of lines. Going off this definition, there doesn’t seem to be any logic in representing a system that doesn’t signify anything, especially when the system lacks structure. However, I found it unsatisfying that something described with spatial metaphors lacks the possibility of physical representation (i.e., drawn or generated) and want to see if it’s possible to challenge a couple key parts of the definition (mostly principles five and six on page 12) of Deleuze and Guattari’s rhizome. I also don’t think principle four— that of asignifying rupture (page 9)— implies that the rhizome itself is asignifying.
+
+First, I don’t quite understand why a rhizome’s lines cannot be translated into a structure where the lines become a graph with both vertices and nodes. Is there a compelling reason for this that I’m missing? Why can’t a “direction in motion” become a start and end point where each node is a semiotic chain? Putting the problems of discretizing a semiotic chain on hold, if this is then possible, I’m not so sure a rhizome is a-signifying.
+
+To move to another text, in Protocol Galloway differentiates the Internet from the rhizome: “the Web is structured around rigid protocols that govern the transfer and representation of texts and images—so the Web isn’t “an acentered, nonhierarchical, nonsignifying system” as is Deleuze and Guattari’s rhizome” (61-2). I don’t think the Web’s protocols mean it is acentered or hierarchical (it’s still decentralized), but the nonsignifying aspect does seem to be the key differentiator. However, if we concede that a rhizome can in fact signify, I don’t see why we cannot physically represent a rhizome. 
+
+I still haven’t totally thought this through, but I can imagine an algorithmic protocol that generates structural representations of a rhizome. Because any change creates a new rhizome, we would begin with a seed at level 0 (I am only using level to represent stages of a rhizome’s generation, not hierarchically) and level 1 would include all semiotic chains that directly relate to that idea (i.e., all ‘directions in motion’ that include the seed would be in level 1). We would continue as such until either all possible semiotic chains in the rhizome in question (one rhizome could be, as is suggested in A Thousand Plateaus, that book itself). Once this rhizome is constructed (and as its being constructed), any change creates a new rhizome. I think this problem may be neutralized through a recurrent neural network using the long short-term memory architecture. (http://colah.github.io/posts/2015-08-Understanding-LSTMs/) If we stochastially assign probablities to movements and the degree of such movements, we can theoretically model a rhizome as it infinitely changes; at each stage, we have simply a freeze frame of the rhizome at a given moment.
+
+Some of the difficulties here seem to be in discretizing each semiotic chain; this seems particularly subjective, so any representation of a rhizome would be limited in the sense that it can likely be represented in many other ways. 
+
+Code is process-based: It is parsed, compiled, procedural or object-oriented, and defined by ontology standards
+
+algorithmically generate a rhizome
+
+any change creates a new rhizome (which, to me, seems like the very definition of generative)
+
+we can emulate analog processes to any desired degree of accuracy with digital computation
+
+spatial metaphor
+
+Felt very unsatisfying that something described with spatial metaphors lacks a physical representation
+
+lines can be turned into nodes where a node is a semiotic chain
+
+connectedness - unclear if graph theory meaning or means that there is a direct connection (i.e., vertex between each node); Galloway’s depiction of a distributed network on page 35 makes me think it’s the former and that X can reach Y (and vice versa) through several paths 
+
+
+## Demystifying the rhizome
+Technical terms
+Wampole 216ish: “D&G retrained in their writing on the rhizome some of the mystical features of writers like Claudel, Heidegger, and Weil” – demystify 
+Hyperliteralizing
+When you hyperliteralize the rhizome, you lost all metaphor (of a certain kind) in exchange for a different kind of abstraction
+- Supposed to be useful, after all; how is a rhizome different from a recommendation engine; a consideration of where to go next
+- Application beyond the internet
+Wampole 222: “penchant for mysticism” – by replacing argument with a flurry of pictures, they imagine they’ll change minds, since the human is such a visual creature. We no longer choose and commit to one picture; we accumulate in shuffle them
+- Multiple simultaneously but constantly shifting—the idea of “time slices”
+Wampole 223: “In the end, the rhizome is not radically different from the root. It is still an embedded form, its pace of growth is the same, and it represents yet another instance of thinking botanically about thought.”
+- Rhizome as nonbinary, nonhierarchical epistemology
+- “Thinking takes place in the ground” – would it help us for computers to do this thinking? There’s a rhizome in every tree, after all
+Celebration of multiplicity, of dissolved categories, of the horizontalization of all aspects of life
+- No reason to not place things on a continuum in computational analysis
+Limitations and deficiencies – a performance of self-doubt (page 224)
+Wampole 227: “the rhizome’s vegetal matter does not last long enough to tell a tale and its surface is not dense enough to be inscribed with any lasting message. Any inscription on the rhizome would decompose along with it”
+- How generations preemptively mark generations to come
+- Very much in process but you can see what’s going on while processing is perpetually going on behind the scenes
+- Could argue that I’m taking the forms too literally, but if they really are not metaphors, how else is one to take them?
+Seeking the truth but unwittingly obfuscating through an endless series of speculative gesture. What truth can we find in n-dimensional reduction?
+Rather than root on paper, expand it into a four-dimensional phenomenon, plastic and dynamic in time and space
+- Paradoxical to capture a line of flight; the moment as multiple things pass into one each other at varying degrees
+Wampole 231: rhizome still has “points of interest”, with lines intersecting to form meaningful junctions
+- Is this not radical enough? How radical and abstract can we make the idea while it still being a useful tool? Does it matter if it's a useful tool?
+- Building blocks of the rhizome described as molecules, atoms, particles, genes, and other microscopic units
+Lines of flight describe the volatile vectors of the rhizome (page 232)
+- Stochastic modelling? Chaos? Spurns stability and formal predictability
+“Favoring production over reproduction, ‘a rhizome is not amenable to any structural or generative model’ (12)” (233)
+- Dichotomy between production and reproduction; can’t we have it both ways?
+Becoming > Being
+- If always passing from multiple becomings to multiple becomings, at what point do we simply call them beings?
+
+
+<!-- {% image /assets/images/facebook.jpg 2000 1000 %} -->
+
+
+
+# How diagrams meaningfully spatialize relationships
+{% image /assets/images/conversation-map-warren-sack.gif 600 600 %}
+{% image /assets/images/sephirotic-tree.jpg 650 1000 %}
+{% image /assets/images/map-of-internet-connected-devices.jpg 2000 1200 %}
+{% image /assets/images/internet-map-zoomed.jpg 1800 1000 %}
+
+
+# Semantic networks
+the political-technical dynamics of information and computer technologies, especially as they pertain to networks of all types. As a way of getting at the crux of the rhizome’s value or what could possibly take its place. What type of meaning can we get from a network; turning unmassed information into a network
+
+# Network protocols and the rhizome
+Protocol can be read as a book of political economy. It argues for a methodological shift from a generalized understanding of networks to a specified one, in which the protocological systems of TCP/IP and DNS operate as what Foucault termed “political technologies.” Foucault’s later work on biopower and biopolitics is significant in this respect, for while Foucault never reduced technology to an empirical “thing,” his analyses of institutions always emphasize the various correlations between bodies and things. Protocol adopts a similar methodological outlook, considering technical standards (such as the OSI Reference Model), network technologies (HTTP), institutional histories (IEEE), and, significantly, instances of “tactical media.”
+
+Network-as-diagram based on the Deluzean concept of diagram; “Protocol considers networks through a “diagram,” a term bor- rowed from Gilles Deleuze. Protocol considers first a network as a set of nodes and edges, dots and lines. The dots may be computers (server, client, or both), human users, communities, LANs, corporations, even countries. The lines can be any practice, action, or event effectuated by the dots (downloading, emailing, connecting, encrypting, buying, logging on, port scanning). With this basic “diagram” you can do a number of things. You can connect the dots—all of them—making a totally connected, distributed network with more than one path to the destination. You can also disconnect dots, even delete dots (no paths, no destination). You can filter out which dots are connected to the network. You can create portals for the addition of future dots. You can designate which kinds of lines you want between the dots (for not all lines are equal; some diverge, flee; others converge, coalesce). In short, a network-as-diagram offers all sorts of possibilities for organization, regulation, and management.”
+
+Using the internet as a political technology? These concept-tools are not so much instruments or hammers, but rather soft machines for interrogating the political-technical dynamics of information and computer technologies, especially as they pertain to networks of all types.
+
+- Treating the rhizome as a network with material substrate and infrastructure; lack general discussion of its constituent parts in the book; so allow me to be so bold as to provide a generalized theory for protocol
+
+
+# How the Internet is rhizomatic
+
+## Galloway's *Protocols*
+Galloway differentiates the Internet from the rhizome: “the Web is structured around rigid protocols that govern the transfer and representation of texts and images—so the Web isn’t “an acentered, nonhierarchical, nonsignifying system” as is Deleuze and Guattari’s rhizome” (61-2). I don’t think the Web’s protocols mean it is acentered or hierarchical (it’s still decentralized), but the nonsignifying aspect does seem to be the key differentiator. However, if we concede that a rhizome can in fact signify, I don’t see why we cannot physically represent a rhizome.
+lines can be turned into nodes where a node is a semiotic chain
+
+connectedness - unclear if graph theory meaning or means that there is a direct connection (i.e., vertex between each node); Galloway’s depiction of a distributed network on page 35 makes me think it’s the former and that X can reach Y (and vice versa) through several paths 
+
+Protocol-
+Founding principle of the Net is control, not freedom, and that the controlling power lies in the technical protocols that make network connections (and disconnections) possible. He does this by treating the computer as a textual medium that is based on a technological language, code. Code, he argues, can be subject to the same kind of cultural and literary analysis as any natural language; computer languages have their own syntax, grammar, communities, and cultures.
+
+Galloway argues that such protocols are the way that control is exercised in our globalized “network society,” one where power is “distributed” laterally, rather than being hierarchically structured, stratified, and centralized, or even (merely) “decentralized.” A distributed network is a rhizome rather than a tree 
+Centralized- single host by which radial nodes are attached
+A network can also have multiple hosts, each with its own set of satellite nodes
+
+
+Comparison of distributed networks to Deleuze (pg 11 galloway)
+
+the distributed network is an entirely different matter. Distributed networks are native to Deleuze’s control societies. Each point in a distributed network is neither a central hub nor a satellite node—there are neither trunks nor leaves. The network contains nothing but “intelligent end-point systems that are self-deterministic, allowing each end-point system to communicate with any host it chooses.”15 Like the rhizome, each node in a distributed network may establish direct communication with another node, without having to appeal to a hierarchical intermediary. Yet in order to initiate communication, the two nodes must speak the same language. This is why protocol is important. Shared protocols are what defines the landscape of the network—who is connected to whom.
+- Nodes must speak the same language – pointing at radical heterogeneity of stratum
+
+33 galloway: A perfect example of a distributed network is the rhizome described in Deleuze and Guattari’s A Thousand Plateaus. Reacting specifically to what they see as the totalitarianism inherent in centralized and even decentralized networks, Deleuze and Guattari instead describe the rhizome, a horizontal meshwork derived from botany. The rhizome links many autonomous nodes together in a manner that is neither linear nor hierarchical. Rhizomes are heterogeneous and connective, that is to say, “any point of a rhizome can be connected to anything other.”6 They are also multiple and asymmetrical: “[a] rhizome may be broken, shattered at a given spot, but it will start up again on one of its old lines, or on new lines.”7 Further, the rhizome has complete disregard for depth models, or procedures of derivation. As Deleuze and Guattari write, a rhizome “is a stranger to any idea of genetic axis
+
+[U]nlike trees or their roots, the rhizome connects any point to any other point . . . The rhizome is reducible neither to the One nor the multiple. . . . It is composed not of units but of dimensions, or rather directions in motion.
+
+some of the assertions don’t seem airtight: rhizome “is composed not of units but of dimensions, or rather directions in motion”
+
+these edges / directions in motions can be turned into edges
+
+everything analog can be represented digitally without a loss of information
+- Although we can emulate analog processes to any desired degree of accuracy with digital computation, we lose several orders of magnitude of efficiency in doing so. A single transistor can multiply two values represented as analog levels; doing so with digital circuits requires thousands of transistors. California Institute of Technology’s Carver Mead has been pioneering this concept; See Carver A. Mead, “Neuromorphic Electronic Systems,” IEEE Proceedings 78.10 (October 1990): 1629–36.
+synaptic threshold
+
+any change creates a new rhizome (which, to me, seems like the very definition of generative)
+
+we can emulate analog processes to any desired degree of accuracy with digital computation
+
+short term memory
+
+long short term memory
+
+61-62
+The story goes that the Internet is rhizomatic. On the one hand, the Web is structured around rigid protocols that govern the transfer and representation of texts and images—so the Web isn’t “an acentered, nonhierarchical, nonsignifying system” as is Deleuze and Guattari’s rhizome. But on the other hand, the Web seems to mirror several of the key characteristics of the rhizome: the ability of any node to be connected to any other node, the rule of multiplicity, the ability to splinter off or graft on at any point, the rejection of a “deep structure,” and so forth.
+The Web is described as a free, structureless network. Yet the rhizome is clearly not the absence of structure. It is the privileging of a certain kind of structure, the horizontal network, over another structure, the tree. So to equate the Web with the rhizome, one must argue against those who describe the Web as a free, structureless network, and argue for a certain kind of rhizomatic protocol on the Web. This is a discussion already underway in chapter 1 and in the introduction.
+
+
+The project of this book is to show that protocol is in fact both poles of this machinic movement, territorializing structure and anarchical distribution. So the question is, How exactly does protocol sew together the apparatus of digital computing into an intelligible object? Why is the Internet such an enthralling technology? How does it work so well while remaining anarchic?
+Indeed, the Internet works too well. If the Internet were truly rhizomatic, it would resist identification. It would resist the deep, meaningful uses that people make of it everyday. The Net is not narrative-based, or time-based. But it still enthralls users, dragging them in, as television and cinema did before it. How? The answer is in the form.
+One concept that I will borrow from film theory is continuity. Despite being a decentralized network composed of many different data fragments, the Internet is able to use the application layer to create a compelling, intuitive experience for the user. This is the secret of continuity.
+
+Why does being rhizomatic inherently mean that it resists identification; derived by their definition, right? same with no “organizing memory or central automation”
+
+why can’t a rhizome have protocol?
+
+interface of representation - how do semiotic chains interact?
+
+deep understanding and digitally-mediated deliberation
+
+how much do representations of the world change when new things happen?
+
+would be more meaningful if computer scientists tried being philosophers rather than philosophers being computer scientists / mathematicians; point being that technical background is necessary to tackle problem
+
+
+## Intertwingularity
+{% marginnote margin3 %}
+{% image /assets/images/deeply-intertwingled.gif 295 242 raw %}
+Deeply intertwingled
+{% endmarginnote %}
+
+{% marginnote margin6 %}
+{% image /assets/images/ordinary-hypertext.gif 277 260 raw %}
+Ordinary hypertext
+{% endmarginnote %}
+
+{% image /assets/images/xanadu-schematic.jpg 539 399 %}
+
+What does it mean for hyperlinks to create meaning?
+Alternative ways to conceive of the Internet
+
+## Dimensionality reduction
+Argue that dimensionality reduction is in fact rhizomes signifying
+Curse of dimensionality – data is so sparse
+Rhizome seems to be an argument against specialization
+generative - having the power or function of generating, originating, producing, or reproducing
+
+## Recurrent Neural Networks for classification
+{% marginnote margin3 %}
+Graphic courtesy of Andrej Karpathy's [*The Unreasonable Effectiveness of Recurrent Neural Networks*](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
+{% endmarginnote %}
+
+{% image /assets/images/rnn1.jpg 1329 416 %}
+
+Each rectangle is a vector and arrows represent functions (e.g. matrix multiply). Input vectors are in red, output vectors are in blue and green vectors hold the RNN's state (more on this soon). From left to right: **(1)** Vanilla mode of processing without RNN, from fixed-sized input to fixed-sized output (e.g. image classification). **(2)** Sequence output (e.g. image captioning takes an image and outputs a sentence of words). **(3)** Sequence input (e.g. sentiment analysis where a given sentence is classified as expressing positive or negative sentiment). **(4)** Sequence input and sequence output (e.g. Machine Translation: an RNN reads a sentence in English and then outputs a sentence in French). **(5)** Synced sequence input and output (e.g. video classification where we wish to label each frame of the video). Notice that in every case are no pre-specified constraints on the lengths sequences because the recurrent transformation (green) is fixed and can be applied as many times as we like.
+
+
+# *A Thousand Plateaus* as a rhizome
+What about closed open-systems like their book? Can create a rhizome of its ideas and how the terms pass into one another; and can relate it to the outside world, too
+Recognition of multiplicities
+Can have the parameters on a gradient
+Poetics of the rhizome
+
+# This post as a rhizome
+
+# Conclusion
+
+
+
+
+# Bibliography
+
+## References
+<p id="burnett">Burnett, Kathleen. "[Toward a Theory of Hypertextual Design](http://pmc.iath.virginia.edu/text-only/issue.193/burnett.193)." Postmodern Culture 3.2 (1993): n. pag. Web.</p>
+<p id="delanda-history">DeLanda. [*Deleuze: History and Science*](https://www.dropbox.com/s/47bvnamtl7clvdb/DeLanda%2C%20Manuel.%20Deleuze%20History%20and%20Science%20%282010%29.pdf?dl=0). X</p>
+<p id="deleuze-diff">Deleuze, Gilles. [*Difference and Repetition*](https://www.dropbox.com/s/y3yj3jwc47wdt24/Deleuze%2C%20Gilles.%20Difference%20and%20Repetition%20%281968%29.pdf?dl=0). New York: Columbia UP, 1968. Print.X</p>
+<p id="deleuze-postscript">---. ["Postscript on the Societies of Control"](https://www.dropbox.com/s/950i92z72s0dpdg/Deleuze%2C%20Gilles.%20Postscript%20on%20the%20Societies%20of%20Control%20%281992%29.pdf?dl=0). X</p>
+<p id="atp">Deleuze, Gilles and Guattari, Felix. [*A Thousand Plateaus*](https://www.dropbox.com/s/3var847r714lpay/Deleuze%2C%20Gilles%20and%20Guattari%2C%20Felix.%20A%20Thousand%20Plateaus%20%281980%29.pdf?dl=0) (1980)</p>
+<p id="dronsfield">Dronsfield, Jonathan. ["Deleuze and the Image of Thought"](https://www.dropbox.com/s/52fwlz7llr596we/Dronsfield%2C%20Jonathan.%20Deleuze%20and%20the%20Image%20of%20Thought%20%282012%29.pdf?dl=0). X</p>
+<p id="drucker">Drucker, Johanna. *Graphesis: Visual Forms of Knowledge Production*. Cambridge: Harvard UP, 2014. Print.</p>
+<p id="galloway-protocol">Galloway. [*Protocol: How Control Exists after Decentralization*](https://www.dropbox.com/s/q9u6bscesqyrra7/Galloway%2C%20Alexander.%20Protocol-%20How%20Control%20Exists%20after%20Decentralization%20%282004%29.pdf?dl=0). Print.</p>
+<p id="galloway-new-media">---. ["What Is New Media?"](https://www.dropbox.com/s/vtq0ru2ihr126hb/Galloway%2C%20Alexander.%20What%20is%20New%20Media%3F%20%282011%29.pdf?dl=0). Print.</p>
+<p id="gregoriou">Gregoriou, Zelia. ["Commencing the Rhizome: Towards a minor philosophy of education"](https://www.dropbox.com/s/ebwp5m6zfaakup3/Gregoriou%2C%20Zelia.%20Commencing%20the%20Rhizome-%20Towards%20a%20minor%20philosophy%20of%20education%20%282004%29.pdf?dl=0). 2004.</p>
+<p id="humphreys">Humphreys, Chloe. [“Rhizomatic Writing and Pedagogy- Deleuze & Guattari and Heidegger”](https://www.dropbox.com/s/j1081xdg2phxyl7/Humphreys%2C%20Chloe.%20Rhizomatic%20Writing%20and%20Pedagogy-%20Deleuze%20%26%20Guattari%20and%20Heidegger%20%282013%29.pdf?dl=0) 2013</p>
+<p id="koh">Koh, Chuen-Ferng. [Internet: Towards a Holistic Ontology](http://wwwmcc.murdoch.edu.au/readingroom/VID/jfk/thesis/contents.htm)</p>
+<p id="imagenet">Krizhevsky, et al.  ["ImageNet Classification with Deep Convolutional Neural Networks"](https://www.dropbox.com/s/vzxf7sdok3kp27q/Krizhevsky%2C%20et%20al.%20ImageNet%20Classification%20with%20Deep%20Convolutional%20Neural%20Networks%20%282010%29.pdf?dl=0). Print.</p>
+<p id="lambert">Lambert, Gregg. *In Search of a New Image of Thought: Gilles Deleuze and Philosophical Expressionism*. Minnesota: U of Minnesota, 2012. Print.</p>
+<p id="larkin-simon">Larkin and Simon. ["Why a Diagram is (Sometimes) Worth Ten Thousand Words"](https://www.dropbox.com/s/svey5k8ffi6vsho/Larkin%20and%20Simon.%20Why%20a%20Diagram%20is%20%28Sometimes%29%20Worth%20Ten%20Thousand%20Words%20%281987%29.pdf?dl=0).</p>
+<p id="lima">Lima, Manuel. [*Visual Complexity: Mapping Patterns of Information*](https://www.dropbox.com/s/0x8afejxl7e1xag/Lima%2C%20Manuel.%20Visual%20Complexity-%20Mapping%20Patterns%20of%20Information%20%282011%29.pdf?dl=0)</p>
+<p id="moktefi">Moktefi, A. and Shin S. [*Visual Reasoning with Diagrams*](https://www.dropbox.com/s/uu06qr9jua5nbh9/Moktefi%2C%20A.%20and%20Shin%2C%20S.%20Visual%20Reasoning%20with%20Diagrams%20%282013%29.pdf?dl=0). 2013.</p>
+<p id="ngui">Ngui, Marc.</p>
+<p id="pinker">Pinker, Stephen. ["A Theory of Graph Comprehension."](https://www.dropbox.com/s/0zt0vrwa7ohm740/Pinker%2C%20Steven.%20A%20Theory%20of%20Graph%20Comprehension%20%281990%29.pdf?dl=0)Artificial Intelligence and the Future of Testing. Ed. R. Feedle. New Jersey: Erlbaum Hillsdale, 1990. 73-126. Print.</p>
+<p id="schmidhuber">Schmidhuber, Jurgen. "[Deep Learning in Neural Networks](https://www.dropbox.com/s/cjrpv6uahcjgxr8/Schmidhuber%2C%20Jurgen.%20Deep%20Learning%20in%20Neural%20Networks%20%282014%29.pdf?dl=0)" (2014)</p>
+<p id="semetsky">Semetsky, Inna. ["Deleuze’s New Image of Thought, or Dewey Revisited"](https://www.dropbox.com/s/px9iqzlby3tb7a5/Semetsky%2C%20Inna.%20Deleuze%E2%80%99s%20New%20Image%20of%20Thought%2C%20or%20Dewey%20Revisited%20%282003%29.pdf?dl=0) 2003 </p>
+<p id="shin">Shin, Sun-Joo. [The Mystery of Deduction and Diagrammatic Aspects of Representation](https://www.dropbox.com/s/iaetqp6a9914sv0/Shin%2C%20Sun-Joo.%20The%20Mystery%20of%20Deduction%20and%20Diagrammatic%20Aspects%20of%20Representation%20%282015%29.pdf?dl=0) (2015)</p>
+Shin also wrote a [Stanford entry on diagrams](http://plato.stanford.edu/entries/diagrams/)
+<p id="sokal-bricmont">Sokal, Alan and Bricmont, Jean. ["Fashionable Nonsense: Postmodern Intellectuals' Abuse of Science"](https://www.dropbox.com/s/usjbyx5igtkmz8s/Sokal%2C%20Alan%20and%20Bricmont%2C%20Jean.%20Fashionable%20Nonsense%20-%20Postmodern%20Intellectuals%27%20Abuse%20of%20Science%20%281999%29.epub?dl=0)</p>
+<p id="veltman">Veltman, Kim. "[Towards a semantic web for culture](https://www.dropbox.com/s/4mduxm77yqaco6d/Veltman%2C%20Kim.%20Towards%20a%20semantic%20web%20for%20culture%20%282001%29.pdf?dl=0)" (2001)</p>
+<p id="wampole">Wampole, Christy. [*Rootedness: The Ramifications of a Metaphor*](https://www.dropbox.com/s/a32k813ntw8pbwe/Wampole%2C%20Christy.%20Rootedness%20%282016%29.epub?dl=0). Chicago: U of Chicago, 2016. Print.</p>
+<p id="wang">Wang, et al. "[Generalized Autoencoder: A Neural Network Framework for Dimensionality Reduction](https://www.dropbox.com/s/06a6jja9843ljpj/Wang%2C%20et%20al.%20Generalized%20Autoencoder-%20A%20Neural%20Network%20Framework%20for%20Dimensionality%20Reduction%20%282014%29.pdf?dl=0)" (2014)</p>
+
+
+
+## Relevant Literature
+[Not yet organized, but here](https://www.dropbox.com/sh/ou9id65c32tywl4/AAAGqVqkzFCi7GFJLgo_3LZra?dl=0)
+
+
+
+<!-- {% youtube lBTCB7yLs8Y 600 300 %} -->
+
+<!-- {% marginnote margin2 %}
+This is a margin note.
+{% endmarginnote %} -->
