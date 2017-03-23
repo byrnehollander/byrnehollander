@@ -454,12 +454,22 @@ code {
 
   <body>
 
+    <script>
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://assets.gfycat.com/gfycat.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'gfycat-js'));
+  </script>
+
 
     <main>
 
   <section>
       <h1>Book of the Month Project</h1>
-      <h3><a href="mailto:byrne.a.hollander.17@dartmouth.edu?Subject=Want%20an%20interview?" target="_top">Contact Byrne Hollander</a></h3>
+      <h3><a href="mailto:byrne.a.hollander.17@dartmouth.edu" target="_top">Contact Byrne Hollander</a></h3>
       <div class="post-meta">
             <time datetime="23 March 2017">23 March 2017</time>
           </div>
@@ -469,8 +479,80 @@ code {
 
       <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
 
+        <!-- FOR SIDENOTES -->
+        <!-- I've also enabled hyp.is annotation. You can create an account or use one I've created for this purpose (both user and pw): bom_byrne -->
 
-        <p>https://hypothes.is/users/bom_byrne</p>
+        <p>I was surprised by the specificity of Book of the Month’s job posting for the Associate Product Manager position. It identified the future employee’s first project: build the testing infrastructure for the website. I’ve been thinking about this problem for a couple days, considering how I’d approach the problem and guessing at how the site was developed without significant testing.</p>
+
+        <p>Armed with Chrome developer tools and the React DevTools extension, I took to the website to see what I could learn. First, I simply tried using all the features on the landing page and seeing if they worked as expected. One thing that caught my eye is how the page responds to minimization: the nav bar becomes a hamburger menu and the images scale (to a limit). Once the images reach a minimum size, the container overflows and the content can only be seen through side scrolling, which isn’t very user friendly (note: this is how it is for all users on the mobile site). Thus, I recommend switching to vertical tiling, as seen below.</p>
+
+        <figure>
+          <amp-img width="2000" height="1765" layout="responsive" src="assets/images/howItWorks.png"></amp-img>
+        </figure>
+
+        <p>I've also made a short gif to demonstrate this problem in action, along with another minor design inconsistency.</p>
+
+        <figure>
+          <div class='gfyitem' data-id='SereneEducatedDungbeetle'></div>
+        </figure>
+
+        <p>After exploring the landing page, I tried making an account so I could see what other features there are and participate in the discussion. While I thought I made an account, I didn't finish checking out, and it was never created. Thus, if the intention is to create an account only for paid subscribers, I'd recommend moving the account password creation step after the checkout. Still, it's possible this is an error. I inspected the call to the server and there was no response (not even one confirming that the chosen email address is not yet registered). Additionally, when I went to a previous step in the check out process, all my progress was lost (this should be a very simple fix).</p>
+
+        <p>I returned to the homepage and tried figuring out why a seemingly static site was written in React. I learned that a logged in user has a slightly different view, and I was able to access some of that view by changing a prop. I've made a gif of this process. (note: the react-keydown package can easily improve navigation in modals https://www.npmjs.com/package/react-keydown)</p>
+
+        <figure>
+          <div class='gfyitem' data-id='SpotlessBlackandwhiteCowbird'></div>
+        </figure>
+
+        <p>At this point, I feel as if I've come to a solid understanding of what . An organization and documentation issue – ideally using testing frameworks for code, but need to be aware of user interactions. still, testing is only a piece of the equation, showing that things work as designed. Karma as a test runner, Mocha as a testing framework, and Webpack as a module loader
+https://semaphoreci.com/community/tutorials/testing-react-components-with-enzyme-and-mocha
+
+<!-- PropTypes for validation
+Building the testing infrastructure is actually rather straightforward
+isparta, istanbul, and enzyme </p>
+
+Code coverage - keeps people accountable to run tests; even add a little badge to Github so non-technical users can see where it’s at (though important to understand what exactly it means)
+
+Static analysis - Istanbul for coverage reporting
+
+lcov reporter with live reload / live reload chrome extension
+
+Testing using enzyme - shallow so without children then using minimum props
+
+I prefer karma to jest.
+
+Importance of tests - dangerouslySetInnerHtml - need to make sure you’ve sanitized or vulnerable to cross site scripting  -->
+
+        <p>Couldn’t create an account to see how discussion works
+          I’ve thought a lot about discussion – nested comments (with some other features) because what seems intuitive right now and integrates well into our chrome extension; also easy to build, will iterate later if a forum style seems more prudent; this immediately seems like a scenario where forum is preferable. free and open source, enables moderation and return to discussions. cross-platform mobile app </p>
+
+        <figure>
+          <div class='gfyitem' data-id='HonoredBriefBlacklab'></div>
+        </figure>
+        Discourse
+
+        <p>Last, I considered what would convince me to subscribe. I read a ton, have so much to do. Community. Value: have a vinyl collection and sometimes drawn to exclusives (like Newbury comics); functionally the same but more aesthetic. Better reading experience? Get users on _. When possible, I use digital versions but also check out a bunch of books from libraries (have about 40 books checked out)
+            What type of exclusive: 92Y book talks – recently went to X
+            Talks on Z. need to be there. Quora-like voting to create AMAs
+            Select users to speak directly to the author
+            Incentivizing the author to participate in community discussions</p>
+            Community - discussion seems to hint at this but in its current state, I don't want to use it. Account unclear, not easy to return to it. Many companies use discourse
+            Not audience - read about a book a week and have a backlog of recommendations from friends family and professors
+Why should I trust them?
+Don't have this established network
+Online book club - meetings with the judge then self / lecture
+Like quora where vote on
+Judge interviews the author
+So I would want a community- and what would the community look like? Exclusive content. One thing to have a new cover design, use higher quality materials and binding. Make the reading experience as good as possible - something you can't get without being a part of the community. Maybe you reduce the number of books? Analyze the number of books by user, change in manufacturing costs at scale
+
+Testing is necessary and important, but I'd personally be much more interested in fostering a strong community. What does an e-book club look like?
+
+        <figure>
+          <div class='gfyitem' data-id='DaringUnfinishedGoshawk'></div>
+        </figure>
+        Quora - though also looks like Discourse recently implemented this https://github.com/discourse/discourse-voting
+
+        <p>In addition to what I've posted here, considered what the user doesn't see. I've also analyzed load speed on gtmetrix.com and come up with several recommendations (the biggest two being JS chunking with WebPack, having ZenDesk chat only load on contact page).</p>
 
 </section>
       </article>
