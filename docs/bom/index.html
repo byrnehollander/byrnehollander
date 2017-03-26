@@ -531,21 +531,41 @@ code {
         </li>
         </ol>
 
-        <h2 id="creating-new-features">Creating new features</h2>
-        <p>We’ve got the site working, automated some tests, optimized our page load and components. But what do we do when we want to add more features? What’s the best way of writing tests as we maintain? Test-driven development (TDD) https://medium.com/javascript-scene/tdd-the-rite-way-53c9b46f45e3#.40sc9h1x0</p>
+        <p>Once the code is well tested, we need a development style that promotes the creation of new tests. I recommend the <a href="https://medium.com/javascript-scene/tdd-the-rite-way-53c9b46f45e3#.40sc9h1x0">Test Driven Development (TDD) framework</a> where requirements are turned into very specific test cases, then the software is improved to pass the new tests. This framework helps create code that is testable, maintains the single responsibility principle, and has deterministic behavior.</p>
 
+        <h2 id="ensuring-performance">Ensuring performance</h2>
 
+        <p>At this point, everything should work! And we have a development framework to ensure that it keeps working. Still, we need to check that everything is working <em>well</em>. Thankfully, React has a nice suite of <a href="https://facebook.github.io/react/docs/perf.html">performance tools</a> to make sure everything is running efficiently; <a href="https://facebook.github.io/react/blog/2016/11/16/react-v15.4.0.html#profiling-components-with-chrome-timeline">Chrome Timeline</a> can also help visualize which components exactly get mounted, updated, and unmounted, how much time they take relative to each other.</p>
 
+        <p>As far as the site’s general performance, I ran gtmetrix (screenshot below – need to find it). Right away, there is one easy change that can be made. Namely, you can use <a href="https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2#.xquhkap8f">chunking with WebPack</a> to reduce the size of the concatenated .js file. It also prevents loading js embeds from loading on pages they aren’t used on (for example, ZenDesk chat).</p>
+
+        <figure>
+          <amp-img width="2662" height="1620" layout="responsive" src="assets/images/gtmetrix.png"></amp-img>
+        </figure>
+
+        <p>Even if the website works and works quickly, the design can probably still be improved. I see that you have Hotjar enabled, so you can A/B test certain designs and see what works best. You may want to pay particular attention to the hamburger menu in the mobile version of the site. While I don’t know what the navigation needs of a logged in user are, the hamburger menu is <a href="http://jamesarcher.me/hamburger-menu">quite controversial</a> and has been known to drive down user engagement.</p>
+
+        <h2 id="creating-a-community">Creating a community</h2>
+
+        <p>Lastly, I consider what would convince me to subscribe. My first thought was that I may not be the target audience: while I’m a voracious reader, I have a lengthy backlog of recommendations from friends, family, and professors. Still, I could see an improved product attracting some people. It could be a limited edition cover design, higher quality paper, or a sewn binding. While this model has been successful with design books and, recently, high quality, modern bibles like <a href="">Bibliophile</a>, books of the month aren’t necessarily heirlooms or books that will be frequently revisited. And, frankly, I don’t have space for more books and opt for digital versions when possible.</p>
+
+        <p>Thus, I think an active reading community would get me to subscribe, and the discussion section certainly hints at Book of the Month recognizing the importance of community. However, I think your discussion section requires some rethinking. First, I think a flat discussion would be easier to read and promote discussion that people can return to.<span id="side4" class="margin-toggle sidenote-number"></span>
+              <span class="sidenote"><a href="https://blog.codinghorror.com/web-discussions-flat-by-design/">This blog post</a> does good job describing why flat discussion is often the best solution.</span> I also think you could use existing discussion tools rather than create your own. One such tool is <a href="https://www.discourse.org/">Discourse</a>. Discourse has been growing in popularity, and is inexpensive to implement. In addition to a sleek and effective interface, it’s easy to moderate and already has a cross-platform mobile app. Below is a short webcast showcasing several of the companies who use Discourse and what it looks like in action:</p>
 
         <figure>
           <div class='gfyitem' data-id='ShowyWelllitIberianmole'></div>
         </figure>
-        Discourse
+
+        <p>Further, Book of the Month subscribers could easily categorize their post by book and chapter. You could also incentivize judges and authors to participate in these discussions. You could additionally host something similar to Quora Sessions, and let users submit questions to ask judges or authors. Below is a quick screencast showing a Quora Session:</p>
 
         <figure>
           <div class='gfyitem' data-id='DaringUnfinishedGoshawk'></div>
         </figure>
-        Quora - though also looks like Discourse recently implemented this https://github.com/discourse/discourse-voting
+
+        <p>And if you like this idea, <a href="https://github.com/discourse/discourse-voting">Discourse recently implemented something just like it</a>!</p>
+
+        <p>You could also build community by hosting events with authors and judges, or sponsoring meetups of readers. Would love to work with you and think I have a lot to add to the team.</p>
+
 
 </section>
       </article>
