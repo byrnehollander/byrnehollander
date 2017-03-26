@@ -496,34 +496,6 @@ code {
           <div class='gfyitem' data-id='SereneEducatedDungbeetle'></div>
         </figure>
 
-        <code>pre</code> tag
-
-        <pre class="code">;; Some code examples in Clojure. This is a comment.
-
-;; applying a function to every item in the collection
-(map tufte-css blog-posts)
-;;;; if unfamiliar, see http://www.lispcast.com/annotated-map
-
-;; side-effecty loop (unformatted, causing text overflow) - from https://clojuredocs.org/clojure.core/doseq
-(doseq [[[a b] [c d]] (map list (sorted-map :1 1 :2 2) (sorted-map :3 3 :4 4))] (prn (* b d)))
-
-;; that same side-effecty loop, formatted
-(doseq [[[a b] [c d]] (map list
-                           (sorted-map :1 1 :2 2)
-                           (sorted-map :3 3 :4 4))]
-  (prn (* b d)))
-
-;; If this proselytizing has worked, check out:
-;; http://howistart.org/posts/clojure/1</pre>
-
-        <figure>
-          <amp-img width="2926" height="1796" layout="responsive" src="assets/images/spamFilter.png"></amp-img>
-        </figure>
-more text
-        <figure>
-          <amp-img width="500" height="500" layout="responsive" src="assets/images/testingTriangle.png"></amp-img>
-        </figure>
-
         <p>After exploring the landing page, I tried making an account so I could see what other features there are and participate in the discussion. While I thought I made an account, I didn't finish checking out, and it was never created. Thus, if the intention is to create an account only for paid subscribers, I'd recommend moving the account password creation step after the checkout. Still, it's possible this is an error. I inspected the call to the server and there was no response (not even one confirming that the chosen email address is not yet registered). Additionally, when I went to a previous step in the check out process, all my progress was lost (this should be a very simple fix).</p>
 
         <p>I returned to the homepage and tried figuring out why a seemingly static site was written in React. I learned that a logged in user has a slightly different view, and I was able to access some of that view by changing a prop. I've made a gif of this process. (note: the react-keydown package can easily improve navigation in modals https://www.npmjs.com/package/react-keydown)</p>
