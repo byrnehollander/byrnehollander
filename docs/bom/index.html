@@ -482,7 +482,7 @@ code {
         <p><span class="marginnote">I’ve enabled <a href="https://hypothes.is/">Hypothes.is annotation</a> on this page. Once you’re logged in, you can easily highlight and comment on specific text. If you don’t already have an account, you can use mine– the username and password are both ‘bom_byrne’</span>
         After applying to the Associate Product Manager position at Book of the Month, I’ve been considering how I would design a testing infrastructure for the website. I was surprised the site didn’t test along the way, but I understand the importance of balancing code quality and project schedule. Further, most of what I’ve seen is static and I don’t imagine much data is involved. Still, I decided to poke around and see what I could learn about the site and what problems better testing might solve. I begin this post with a discussion of testing and end with product ideas for Book of the Month.</p>
 
-        <h1 id="surveying-the-site">Surveying the site</h1>
+        <h2 id="surveying-the-site">Surveying the site</h2>
 
         <p>Armed with Chrome developer tools and the React DevTools extension, I took to the website. First, I simply tried all the features on the landing page to see if they worked as expected. One thing that caught my eye is how the page responds to a decreasing page width: the nav bar becomes a hamburger menu and the images scale (to a limit). Once the images reach a minimum size, the container overflows and the content can only be seen through side scrolling. Below is a short screencast to show this problem (along with another minor design inconsistency).</p>
 
@@ -518,6 +518,9 @@ code {
         <p>If I were put in charge of testing, my process would be organized as follows:</p>
 
         <ol>
+          <span class="marginnote">The right proportion of each test kind depends on the particular project, but I would begin by following Google’s 70-20-10 <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html">testing pyramid </a>.
+          <amp-img width="250" height="250" src="assets/images/testingTriangle.png"></amp-img>
+          </span>
           <li>I would first take stock of existing functionality and make sure everything works. I would also implement any minor improvements that could be completed within a few hours. For example, I’d make it a priority that the mobile view more intuitively renders overflow. Then, I’d add a few features to the modals: the modal would close if a user clicks or taps outside it, the navigation arrows would stay in the same location regardless of the modal height, and I would enable keyboard navigation.</li>
           <li>Next, I would make sure <a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">typechecking with PropTypes</a> is in use. PropTypes are an easy way to make sure the data you receive is valid, and should be a part of every React app.</li>
           <li>Now, I would review the backend code. I would meet with others to identify under what circumstances the server needs to be called. I’d remove extraneous calls and decompose the remaining calls into modular functions. I would begin by writing unit tests<span id="side3" class="margin-toggle sidenote-number"></span>
@@ -525,9 +528,7 @@ code {
           <li>After, I would move to integration testing to validate that the user stories have been satisfied and that the functions work well together. <span class="marginnote">There are many testing tools to choose from. For backend testing, Mocha is a popular testing environment and Chai is probably the most used assertion library. Personally, I think these overcomplicate things— I prefer Tape and Supertest. I highly recommend Eric Elliott’s <a href="https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4#.5ng1arlsc">writing on the subject</a> and <a href="https://github.com/ericelliott/essential-javascript-links#testing--lint--quality-checkers">his recommend tools</a>. Jarvis Badgley has written a more <a href="https://github.com/ChiperSoft/tape-vs-mocha">code-forward argument</a> for Tape over Mocha.</span> In general, I look to use tools that are easy to understand and fade into the background.</li>
           <li>While I don’t know if existing front-end UI elements require testing, <a href="https://medium.com/airbnb-engineering/enzyme-javascript-testing-utilities-for-react-a417e5e5090f#.tfqch85ic">Enzyme</a> is useful for testing UI and <a href="http://airbnb.io/enzyme/docs/guides/tape-ava.html">plays nicely with Tape</a>.</li>
           <li>After integration testing comes end-to-end (e2e) testing, a technique used to test whether the flow of an application right from start to finish is behaving as expected. These tests identify system dependencies and ensure that data integrity is maintained between various system components and systems. Unfortunately, this means we need to <a href="https://medium.com/@TuckerConnelly/good-practices-for-testing-react-apps-3a64154fa3b1#.ouzto5e53">bring Selenium into the picture</a>. While likely overkill for this project, we could at least set up the infrastructure for later development.
-        <span class="marginnote">The right proportion of each test kind depends on the particular project, but I would begin by following Google’s 70-20-10 <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html">testing pyramid </a>.
-        <amp-img width="250" height="250" src="assets/images/testingTriangle.png"></amp-img>
-        </span></li>
+        </li>
         </ol>
 
         <h2 id="creating-new-features">Creating new features</h2>
