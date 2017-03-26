@@ -479,194 +479,72 @@ code {
 
       <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
 
-        <!-- FOR SIDENOTES -->
-        <!-- I've also enabled hyp.is annotation. You can create an account or use one I've created for this purpose (both user and pw): bom_byrne -->
+        <p><span class="marginnote">I’ve enabled <a href="https://hypothes.is/">Hypothes.is annotation</a> on this page. Once you’re logged in, you can easily highlight and comment on specific text. If you don’t already have an account, you can use mine– the username and password are both ‘bom_byrne’</span>
+        After applying to the Associate Product Manager position at Book of the Month, I’ve been considering how I would design a testing infrastructure for the website. I was surprised the site didn’t test along the way, but I understand the importance of balancing code quality and project schedule. Further, most of what I’ve seen is static and I don’t imagine much data is involved. Still, I decided to poke around and see what I could learn about the site and what problems better testing might solve. I begin this post with a discussion of testing and end with product ideas for Book of the Month.</p>
 
-        <h2 id="who-are-you">Who are you?</h2>
+        <h1 id="surveying-the-site">Surveying the site</h1>
 
-        <p>I was surprised by the specificity of Book of the Month’s job posting for the Associate Product Manager position. It identified the future employee’s first project: build the testing infrastructure for the website. I’ve been thinking about this problem for a couple days, considering how I’d approach the problem and guessing at how the site was developed without significant testing.</p>
-
-        <p>Armed with Chrome developer tools and the React DevTools extension, I took to the website to see what I could learn. First, I simply tried using all the features on the landing page and seeing if they worked as expected. One thing that caught my eye is how the page responds to minimization: the nav bar becomes a hamburger menu and the images scale (to a limit). Once the images reach a minimum size, the container overflows and the content can only be seen through side scrolling, which isn’t very user friendly (note: this is how it is for all users on the mobile site). Thus, I recommend switching to vertical tiling, as seen below.</p>
-
-        <figure>
-          <amp-img width="2000" height="1765" layout="responsive" src="assets/images/howItWorks.png"></amp-img>
-        </figure>
-
-        <p>I've also made a short gif to demonstrate this problem in action, along with another minor design inconsistency.</p>
-
-          <!-- <figure>
-            <video preload="auto" muted loop controls autoplay width="100%" id="noborder">
-              <source src="assets/videos/1.mp4" type='video/mp4'>
-                Your browser does not support the video tag.
-            </video>
-          </figure> -->
+        <p>Armed with Chrome developer tools and the React DevTools extension, I took to the website. First, I simply tried all the features on the landing page to see if they worked as expected. One thing that caught my eye is how the page responds to a decreasing page width: the nav bar becomes a hamburger menu and the images scale (to a limit). Once the images reach a minimum size, the container overflows and the content can only be seen through side scrolling. Below is a short screencast to show this problem (along with another minor design inconsistency).</p>
 
         <figure>
           <div class='gfyitem' data-id='ShallowInfatuatedHamadryad'></div>
         </figure>
 
-        <code>pre</code> tag
+        <p>The easiest fix is to enable vertical tiling where appropriate. Below is quick mockup:</p>
 
-        <pre class="code">;; Some code examples in Clojure. This is a comment.
+        <figure>
+          <amp-img width="2000" height="1765" layout="responsive" src="assets/images/howItWorks.png"></amp-img>
+        </figure>
 
-;; applying a function to every item in the collection
-(map tufte-css blog-posts)
-;;;; if unfamiliar, see http://www.lispcast.com/annotated-map
+        <p>Automated testing wouldn’t have found this bug because this issue is merely a design oversight. Thus, the problem would have to be anticipated in mobile mockups or by simply using the site on devices of various sizes (or simulating popular screen sizes).</p>
 
-;; side-effecty loop (unformatted, causing text overflow) - from https://clojuredocs.org/clojure.core/doseq
-(doseq [[[a b] [c d]] (map list (sorted-map :1 1 :2 2) (sorted-map :3 3 :4 4))] (prn (* b d)))
-
-;; that same side-effecty loop, formatted
-(doseq [[[a b] [c d]] (map list
-                           (sorted-map :1 1 :2 2)
-                           (sorted-map :3 3 :4 4))]
-  (prn (* b d)))
-
-;; If this proselytizing has worked, check out:
-;; http://howistart.org/posts/clojure/1</pre>
+        <p>After exploring the landing page, I tried making an account to learn about the other features. While I submitted the account creation form and my information was sent to the server, I didn’t finish checking out, so my account was never created. If the intention is to only allow subscribers to have an account, I recommend moving the account password creation step after the checkout. Additionally, going back to the account creation page from the checkout page resulted in my username and password being lost. Still, it’s possible that you intended for the account to be created, but an error prevented that from happening. I inspected the call to the server and there was no response (not even one confirming that the chosen email address is not yet registered). Still, I have evidence that my email <em>was</em> sent to the server. A bit after trying to create an account, I got an email reminding me to checkout. However, it was caught by my spam filter. <span id="side1" class="margin-toggle sidenote-number"></span>
+              <span class="sidenote">I wonder if sending an account registration email prior to this reminder would decrease the chances of the email going to spam. Regardless, I recommend changing the language of this reminder email so it has a better chance of reaching your audience.</span></p>
 
         <figure>
           <amp-img width="2926" height="1796" layout="responsive" src="assets/images/spamFilter.png"></amp-img>
         </figure>
-more text
-        <figure>
-          <amp-img width="500" height="500" layout="responsive" src="assets/images/testingTriangle.png"></amp-img>
-        </figure>
 
-        <p>After exploring the landing page, I tried making an account so I could see what other features there are and participate in the discussion. While I thought I made an account, I didn't finish checking out, and it was never created. Thus, if the intention is to create an account only for paid subscribers, I'd recommend moving the account password creation step after the checkout. Still, it's possible this is an error. I inspected the call to the server and there was no response (not even one confirming that the chosen email address is not yet registered). Additionally, when I went to a previous step in the check out process, all my progress was lost (this should be a very simple fix).</p>
-
-        <p>I returned to the homepage and tried figuring out why a seemingly static site was written in React. I learned that a logged in user has a slightly different view, and I was able to access some of that view by changing a prop. I've made a gif of this process. (note: the react-keydown package can easily improve navigation in modals https://www.npmjs.com/package/react-keydown)</p>
+        <p>After failing to make an account, I returned to the homepage to see what I could learn about the site’s structure. I saw that a logged in user has a slightly different view, and I was able to access some of this view by changing a prop. Below is a short screencast of this process.
+              <span class="marginnote">The <a href="https://www.npmjs.com/package/react-keydown">react-keydown package</a> can be easily implemented to improve navigation in modals.</span></p>
 
         <figure>
           <div class='gfyitem' data-id='SpotlessBlackandwhiteCowbird'></div>
         </figure>
 
-        <p>At this point, I feel as if I've come to a solid understanding of what . An organization and documentation issue – ideally using testing frameworks for code, but need to be aware of user interactions. still, testing is only a piece of the equation, showing that things work as designed. Karma as a test runner, Mocha as a testing framework, and Webpack as a module loader
-https://semaphoreci.com/community/tutorials/testing-react-components-with-enzyme-and-mocha
+        <p>At this point, I feel that I’ve come to a solid understanding of what the website does and what the testing infrastructure needs. It may be helpful to write a spec of important design decisions: how should the enrollment process be organized and why? Do we only want subscribers to have an account? When should we make calls to the server, what data should the calls have, and how should we respond? After writing this spec, it may prove useful to document every possible user interaction and the desired resulting behavior.</p>
 
-<!-- PropTypes for validation
-Building the testing infrastructure is actually rather straightforward
-isparta, istanbul, and enzyme </p>
+        <h2 id="creating-a-testing-infrastructure">Creating a testing infrastructure</h2>
+        <p>If I were put in charge of testing, my process would be organized as follows:</p>
 
-Code coverage - keeps people accountable to run tests; even add a little badge to Github so non-technical users can see where it’s at (though important to understand what exactly it means)
+        <ol>
+          <li>I would first take stock of existing functionality and make sure everything works. I would also implement any minor improvements that could be completed within a few hours. For example, I’d make it a priority that the mobile view more intuitively renders overflow. Then, I’d add a few features to the modals: the modal would close if a user clicks or taps outside it, the navigation arrows would stay in the same location regardless of the modal height, and I would enable keyboard navigation.</li>
+          <li>Next, I would make sure <a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">typechecking with PropTypes</a> is in use. PropTypes are an easy way to make sure the data you receive is valid, and should be a part of every React app.</li>
+          <li>Now, I would review the backend code. I would meet with others to identify under what circumstances the server needs to be called. I’d remove extraneous calls and decompose the remaining calls into modular functions. I would begin by writing unit tests<span id="side3" class="margin-toggle sidenote-number"></span>
+           <span class="sidenote">Not all unit tests were created equal—I would make sure my unit tests follow <a href="https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d#.lx9b9iy5w">these guidelines</a></span>, which provide a realtime test feedback console for developers as they code. While writing these tests, it is important to track how much of the code you’ve tested. Code coverage is also great at keeping people accountable to run tests. Many tools like <a href="https://github.com/dwyl/learn-istanbul">Istanbul</a> and <a href="https://codecov.io/">Codecov</a> can be configured to add a badge to the repository’s readme, allowing even non-technical users to see how far along testing is. Additionally, it’s important to ensure uniform code style. You’re probably already using ESLint, which can be configured to <a href="https://github.com/airbnb/javascript#testing">maintain testing style</a>.</li>
+          <li>After, I would move to integration testing to validate that the user stories have been satisfied and that the functions work well together. <span class="marginnote">There are many testing tools to choose from. For backend testing, Mocha is a popular testing environment and Chai is probably the most used assertion library. Personally, I think these overcomplicate things— I prefer Tape and Supertest. I highly recommend Eric Elliott’s <a href="https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4#.5ng1arlsc">writing on the subject</a> and <a href="https://github.com/ericelliott/essential-javascript-links#testing--lint--quality-checkers">his recommend tools</a>. Jarvis Badgley has written a more <a href="https://github.com/ChiperSoft/tape-vs-mocha">code-forward argument</a> for Tape over Mocha.</span> In general, I look to use tools that are easy to understand and fade into the background.</li>
+          <li>While I don’t know if existing front-end UI elements require testing, <a href="https://medium.com/airbnb-engineering/enzyme-javascript-testing-utilities-for-react-a417e5e5090f#.tfqch85ic">Enzyme</a> is useful for testing UI and <a href="http://airbnb.io/enzyme/docs/guides/tape-ava.html">plays nicely with Tape</a>.</li>
+          <li>After integration testing comes end-to-end (e2e) testing, a technique used to test whether the flow of an application right from start to finish is behaving as expected. These tests identify system dependencies and ensure that data integrity is maintained between various system components and systems. Unfortunately, this means we need to <a href="https://medium.com/@TuckerConnelly/good-practices-for-testing-react-apps-3a64154fa3b1#.ouzto5e53">bring Selenium into the picture</a>. While likely overkill for this project, we could at least set up the infrastructure for later development.
+        <span class="marginnote">The right proportion of each test kind depends on the particular project, but I would begin by following Google’s 70-20-10 <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html">testing pyramid </a>.
+        <amp-img width="250" height="250" src="assets/images/testingTriangle.png"></amp-img>
+        </span></li>
+        </ol>
 
-Static analysis - Istanbul for coverage reporting
+        <h2 id="creating-new-features">Creating new features</h2>
+        <p>We’ve got the site working, automated some tests, optimized our page load and components. But what do we do when we want to add more features? What’s the best way of writing tests as we maintain? Test-driven development (TDD) https://medium.com/javascript-scene/tdd-the-rite-way-53c9b46f45e3#.40sc9h1x0</p>
 
-lcov reporter with live reload / live reload chrome extension
 
-Testing using enzyme - shallow so without children then using minimum props
 
-I prefer karma to jest.
-
-Importance of tests - dangerouslySetInnerHtml - need to make sure you’ve sanitized or vulnerable to cross site scripting  -->
-
-        <p>Couldn’t create an account to see how discussion works
-          I’ve thought a lot about discussion – nested comments (with some other features) because what seems intuitive right now and integrates well into our chrome extension; also easy to build, will iterate later if a forum style seems more prudent; this immediately seems like a scenario where forum is preferable. free and open source, enables moderation and return to discussions. cross-platform mobile app </p>
 
         <figure>
           <div class='gfyitem' data-id='ShowyWelllitIberianmole'></div>
         </figure>
         Discourse
 
-        <p>Last, I considered what would convince me to subscribe. I read a ton, have so much to do. Community. Value: have a vinyl collection and sometimes drawn to exclusives (like Newbury comics); functionally the same but more aesthetic. Better reading experience? Get users on _. When possible, I use digital versions but also check out a bunch of books from libraries (have about 40 books checked out)
-            What type of exclusive: 92Y book talks – recently went to X
-            Talks on Z. need to be there. Quora-like voting to create AMAs
-            Select users to speak directly to the author
-            Incentivizing the author to participate in community discussions</p>
-            Community - discussion seems to hint at this but in its current state, I don't want to use it. Account unclear, not easy to return to it. Many companies use discourse
-            Not audience - read about a book a week and have a backlog of recommendations from friends family and professors
-Why should I trust them?
-Don't have this established network
-Online book club - meetings with the judge then self / lecture
-Like quora where vote on
-Judge interviews the author
-So I would want a community- and what would the community look like? Exclusive content. One thing to have a new cover design, use higher quality materials and binding. Make the reading experience as good as possible - something you can't get without being a part of the community. Maybe you reduce the number of books? Analyze the number of books by user, change in manufacturing costs at scale
-
-Testing is necessary and important, but I'd personally be much more interested in fostering a strong community. What does an e-book club look like?
-
         <figure>
           <div class='gfyitem' data-id='DaringUnfinishedGoshawk'></div>
         </figure>
         Quora - though also looks like Discourse recently implemented this https://github.com/discourse/discourse-voting
-
-        <p>In addition to what I've posted here, considered what the user doesn't see. I've also analyzed load speed on gtmetrix.com and come up with several recommendations (the biggest two being JS chunking with WebPack, having ZenDesk chat only load on contact page).</p>
-
-I now have a better idea of what is required when creating a testing infrastructure. Need to make sure things scale appropriately, need to make sure all intuitive functionality is there, need to make sure we only call the server when we want a response, only load relevant content. In addition, need to verify that the server rejects nonsense parameters (for example, sign up and registration only stopped by BrainTree nonce. Need to ensure server side verification - that the user info is properly formatted, and most importanty, the plan_id sent in payment verification  is valid.
-Standard suite of js testing that nicely integrate with babel and web pack - front end and dynamic
-Test runner
-Back end
-Ensure code coverage
-
-Next, in determining how to create a testing suite, I realized I might not be the target user. All five users being female on the bottom of the page didn’t scare me away, but what benefits would I get from reading recommendations? Have a serious back log. I could see product itself attracting people — a limited edition book cover design, higher quality paper, a sewn binding. This would probably only attract me if it was a book I planned to keep for a long time or re-read.
-
-Something unique to the community itself. Discussion view hints at current vision of the importance of community. Both of my last projects have been on digital communication and come to appreciate the nuances in discussion systems. First, I don’t think nested comments are appropriate here. I think forum style better. Also looks bare bones. Could use existing open source tools. Discourse has been growing in popularity and inexpensive and easy to implement. Gif below
-
-A high quality discussion center for like minded people discussing the same few books does appeal to me. Further exclusives.  Discussing with the judge or the author. Either active on forum. OR  something similar to reddit AMA or Quora sessions - vote on questions to ask and then interview author - either text or live stream
-Or a chance of meeting the author or judge
-Or meetups with other readers - turning the book club into an in person event
-
-Rather than do regression testing myself, automate tests! Further regression tests fail less often when you do unit tests rather than e2e (end-to-end)
-
-End to end testing with selenium
-https://medium.com/@TuckerConnelly/good-practices-for-testing-react-apps-3a64154fa3b1#.ouzto5e53
-https://marmelab.com/blog/2016/04/19/e2e-testing-with-node-and-es6.html
-
-
-Not just making things work, but work well
-
-Google likes 70 20 10 testing pyramid - https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html
-
-Important to not over complicate things
-
-Nice interface to select books and order them
-
-As of March 27, 2017 I do not have a post-grad job. Want to change that?
-
-
-Creating a testing infrastructure for
-
-http://adho.org/conference
-
-Profiling components
-https://facebook.github.io/react/blog/2016/11/16/react-v15.4.0.html#profiling-components-with-chrome-timeline
-
-Later, for apps with granular functionality, we’ll look at performance patterns like PRPL which nail fast time-to-interactivity through granular “route-based chunking” while taking advantage of HTTP/2 Server Push (try the Shop demo to see what we mean).
-
-Code splitting by routes
-https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2#.un0r1g1xn
-
-https://getmdl.io/templates/portfolio/index.html
-
-react-addons-perf for profiling
-
-Programming without being overwhelmed by and obsessed with programming. Simplicity of languages, simplicity of tools, and simplicity in ways of writing code are all part of that.
-
-Mocha for a testing environment and Chai as the assertion library
-
-Less likely to go to spam if sent a confirmation email
-
-Got email address just to save it
-
-Vanilla; javascript tools changing very quickly; code base
-
-Pretty small code base
- What every unit test needs
-https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d#.lx9b9iy5w
-
-Tape instead of Mocha
-https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4#.4yky2obqj
-
-Eric Elliott’s testing links
-https://github.com/ericelliott/essential-javascript-links#testing--lint--quality-checkers
-I’m using Enzyme, Mocha, etc but taking an advanced full stack web dev class this term where
-
-
-Small enough to not require a super fancy testing infrastructure
-https://medium.com/javascript-scene/tdd-the-rite-way-53c9b46f45e3#.40sc9h1x0
-
-
-End-to-end tests to make sure they work together
-https://marmelab.com/blog/2016/04/19/e2e-testing-with-node-and-es6.html
 
 </section>
       </article>
