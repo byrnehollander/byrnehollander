@@ -554,6 +554,83 @@ Testing is necessary and important, but I'd personally be much more interested i
 
         <p>In addition to what I've posted here, considered what the user doesn't see. I've also analyzed load speed on gtmetrix.com and come up with several recommendations (the biggest two being JS chunking with WebPack, having ZenDesk chat only load on contact page).</p>
 
+I now have a better idea of what is required when creating a testing infrastructure. Need to make sure things scale appropriately, need to make sure all intuitive functionality is there, need to make sure we only call the server when we want a response, only load relevant content. In addition, need to verify that the server rejects nonsense parameters (for example, sign up and registration only stopped by BrainTree nonce. Need to ensure server side verification - that the user info is properly formatted, and most importanty, the plan_id sent in payment verification  is valid.
+Standard suite of js testing that nicely integrate with babel and web pack - front end and dynamic
+Test runner
+Back end
+Ensure code coverage
+
+Next, in determining how to create a testing suite, I realized I might not be the target user. All five users being female on the bottom of the page didn’t scare me away, but what benefits would I get from reading recommendations? Have a serious back log. I could see product itself attracting people — a limited edition book cover design, higher quality paper, a sewn binding. This would probably only attract me if it was a book I planned to keep for a long time or re-read.
+
+Something unique to the community itself. Discussion view hints at current vision of the importance of community. Both of my last projects have been on digital communication and come to appreciate the nuances in discussion systems. First, I don’t think nested comments are appropriate here. I think forum style better. Also looks bare bones. Could use existing open source tools. Discourse has been growing in popularity and inexpensive and easy to implement. Gif below
+
+A high quality discussion center for like minded people discussing the same few books does appeal to me. Further exclusives.  Discussing with the judge or the author. Either active on forum. OR  something similar to reddit AMA or Quora sessions - vote on questions to ask and then interview author - either text or live stream
+Or a chance of meeting the author or judge
+Or meetups with other readers - turning the book club into an in person event
+
+Rather than do regression testing myself, automate tests! Further regression tests fail less often when you do unit tests rather than e2e (end-to-end)
+
+End to end testing with selenium
+https://medium.com/@TuckerConnelly/good-practices-for-testing-react-apps-3a64154fa3b1#.ouzto5e53
+https://marmelab.com/blog/2016/04/19/e2e-testing-with-node-and-es6.html
+
+
+Not just making things work, but work well
+
+Google likes 70 20 10 testing pyramid - https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html
+
+Important to not over complicate things
+
+Nice interface to select books and order them
+
+As of March 27, 2017 I do not have a post-grad job. Want to change that?
+
+
+Creating a testing infrastructure for
+
+http://adho.org/conference
+
+Profiling components
+https://facebook.github.io/react/blog/2016/11/16/react-v15.4.0.html#profiling-components-with-chrome-timeline
+
+Later, for apps with granular functionality, we’ll look at performance patterns like PRPL which nail fast time-to-interactivity through granular “route-based chunking” while taking advantage of HTTP/2 Server Push (try the Shop demo to see what we mean).
+
+Code splitting by routes
+https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2#.un0r1g1xn
+
+https://getmdl.io/templates/portfolio/index.html
+
+react-addons-perf for profiling
+
+Programming without being overwhelmed by and obsessed with programming. Simplicity of languages, simplicity of tools, and simplicity in ways of writing code are all part of that.
+
+Mocha for a testing environment and Chai as the assertion library
+
+Less likely to go to spam if sent a confirmation email
+
+Got email address just to save it
+
+Vanilla; javascript tools changing very quickly; code base
+
+Pretty small code base
+ What every unit test needs
+https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d#.lx9b9iy5w
+
+Tape instead of Mocha
+https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4#.4yky2obqj
+
+Eric Elliott’s testing links
+https://github.com/ericelliott/essential-javascript-links#testing--lint--quality-checkers
+I’m using Enzyme, Mocha, etc but taking an advanced full stack web dev class this term where
+
+
+Small enough to not require a super fancy testing infrastructure
+https://medium.com/javascript-scene/tdd-the-rite-way-53c9b46f45e3#.40sc9h1x0
+
+
+End-to-end tests to make sure they work together
+https://marmelab.com/blog/2016/04/19/e2e-testing-with-node-and-es6.html
+
 </section>
       </article>
   </div>
