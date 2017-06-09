@@ -1220,6 +1220,11 @@ img.round {
 	bottom: 4em;
 }
 
+.thumb.featured .info .excerpt {
+	position: absolute;
+	bottom: 2em;
+}
+
 .thumb.dark-overlay .info .big-title, .thumb.medium-overlay .info .big-title {
 	color: #fff;
 }
@@ -1227,8 +1232,6 @@ img.round {
 .thumb .info .excerpt {
 	display: block;
 	font-size: 0.875em;
-	position: absolute;
-	bottom: 2em;
 }
 
 .thumb.featured .info .excerpt {
