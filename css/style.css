@@ -32,6 +32,20 @@ Table of contents:
 
 */
 
+/* personal additions */
+.contact-info {
+  color: white;
+}
+
+ul a:hover {
+  opacity: .8;
+}
+
+.contact-section {
+	margin-top: 3em;
+	margin-left: 1em;
+}
+
 /* 1. Reset */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
@@ -2251,7 +2265,7 @@ img.round {
 
 .contact-address-info {
 	position: relative;
-	padding: 1em 0 0 3em;
+	padding: 0.4em 0 0 3em;
 	margin-bottom: 2.4em;
 }
 
@@ -2263,7 +2277,7 @@ img.round {
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-size: 1.25em;
+	font-size: 2em;
 	color: #292f33;
 }
 
