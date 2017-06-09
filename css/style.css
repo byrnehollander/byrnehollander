@@ -1216,6 +1216,8 @@ img.round {
 	line-height: 1em;
 	letter-spacing: -1px;
 	color: #292f33;
+	position: absolute;
+	bottom: 4em;
 }
 
 .thumb.dark-overlay .info .big-title, .thumb.medium-overlay .info .big-title {
@@ -1225,6 +1227,8 @@ img.round {
 .thumb .info .excerpt {
 	display: block;
 	font-size: 0.875em;
+	position: absolute;
+	bottom: 2em;
 }
 
 .thumb.featured .info .excerpt {
@@ -2546,12 +2550,16 @@ img.round {
 	.thumb.featured .info .big-title {
 		max-width: 70%;
 		font-size: 4em;
+		position: absolute;
+		bottom: 3em;
 	}
 
 	.thumb.featured .info .excerpt {
 		margin-top: 2em;
 		margin-bottom: 2em;
 		max-width: 70%;
+		position: absolute;
+		bottom: 4em;
 	}
 
 	.team-container {
@@ -3059,6 +3067,8 @@ img.round {
 	.thumb.featured .info .big-title {
 		font-size: 2em;
 		max-width: none;
+		position: absolute;
+		bottom: 2em;
 	}
 
 	.thumb.featured .info .excerpt {
@@ -3912,10 +3922,14 @@ img.round {
 	.thumb.featured .info .big-title {
 		max-width: 80%;
 		margin-top: 0.3em;
+		position: absolute;
+		bottom: 3em;
 	}
 
 	.thumb.featured .info .excerpt {
 		margin-top: 2.5em;
+		position: absolute;
+		bottom: 4em;
 	}
 
 	.thumb .big-excerpt {
