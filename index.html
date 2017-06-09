@@ -1,62 +1,218 @@
----
-layout: default
----
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title>Byrne Hollander</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<main>
+	<meta name="description" content="Byrne Hollander Portfolio">
+	<meta name="keywords" content="Byrne, Hollander, Photography, Product Manager, Programmer, New York, NY, Design, Development">
 
-  <section>
-      <h1>{{ site.title }}</h1>
-      <h3>{{ site.description }}</h3>
-  </section>
+	<link rel="shortcut icon" href="favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic%7CRoboto:400,700%7CDroid+Serif" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/style-dark.css" rel="stylesheet" type="text/css">
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-87736562-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+<body>
 
-  <div>
-    {% for post in paginator.posts %}
-      <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
+	<header id="top" class="navbar" role="banner">
+		<div class="container">
+			<div class="inner">
 
-          <header>
-            <h2 itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-          </header>
+				<div class="site-title">
+					<h1><a href="https://byrnehollander.com"><img src="img/logo.png" width="58" height="50" alt="Byrne Hollander"></a></h1>
+					<a href="#site-menu" class="site-menu-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<em class="first"></em><em class="middle"></em><em class="last"></em>
+					</a>
+				</div>
 
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-          </div>
+				<div id="site-menu">
+					<nav>
+						<ul>
+							<li class="current-menu-item"><a href="https://byrnehollander.com">Home</a></li>
+							<li><a href="photography.html">Photography</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<!-- <li class="current-menu-item"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="menu-item-has-children">
+								<a href="work.html">Work</a>
+								<ul>
+									<li><a href="work.html">Classic Gallery</a></li>
+									<li><a href="work-categories.html">Category Based</a></li>
+									<li><a href="project.html">Single Project</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="blog.html">Blog</a>
+								<ul>
+									<li><a href="blog.html"> Fullpage Blog</a></li>
+									<li><a href="blog-sidebar.html">Blog with Sidebar</a></li>
+									<li><a href="post.html">Single Blog Post</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="features.html">Features</a>
+								<ul>
+									<li><a href="features.html">Styleguide</a></li>
+									<li><a href="clients.html">Clients</a></li>
+									<li class="menu-item-has-children">
+										<a href="#">Submenu Test</a>
+										<ul>
+											<li><a href="#">Submenu Item 1</a></li>
+											<li><a href="#">Submenu Item 2</a></li>
+											<li><a href="#">Submenu Item 3</a></li>
+										</ul>
+									</li>
+									<li><a href="404.html">404 Not Found</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="contact1.html">Contact</a>
+								<ul>
+									<li><a href="contact1.html">Contact &mdash; Style 1</a></li>
+									<li><a href="contact2.html">Contact &mdash; Style 2</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-search">
+								<a href="search.html"><i class="fa fa-search"></i><i class="fa fa-times"></i></a>
+								<form method="get" id="site-searchform" class="searchform" action="search.html">
+									<input type="search" name="s" autocomplete="off" placeholder="Search&hellip;">
+									<input type="submit" value="&#xf002;">
+								</form>
+							</li> -->
+						</ul>
+					</nav>
+				</div>
 
-          <section itemprop="description">
-            {{ post.content | markdownify }}
-          </section>
+			</div>
+		</div>
+	</header>
 
-      </article>
-    {% endfor %}
-  </div>
+	<main id="content" role="main">
+		<div class="container container-masonry">
+			<div class="inner">
+				<div class="row">
+					<div class="box col-sm-4 col-md-6">
+						<div class="thumb featured medium-overlay">
+							<div class="photo">
+								<a href="contact.html">
+									<img src="img/byrne.jpg" alt="" width="715" height="715">
+									<span class="info"><strong class="big-title">Hi, I'm Byrne.</strong><span class="excerpt">I just graduated from Dartmouth with a degree in computer science and English. I'm currently working as an associate product manager at SeatGeek.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="http://about.notist.io/" target="_blank">
+									<img src="img/notist.png" alt="" width="434" height="434">
+									<span class="info"><strong class="title">Notist</strong><span class="excerpt">Socially annotate the web. Won first in Dartmouth's pitch competition.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="https://github.com/byrnehollander/pomesic" target="_blank">
+									<img src="img/pomesic.png" alt="" width="434" height="434">
+									<span class="info"><strong class="title">Pome [sic]</strong><span class="excerpt">A twitter bot that combines tweets to create poetry from everyday musings.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="https://github.com/YipYep/client" target="_blank">
+									<img src="img/yipyip.png" alt="" width="434" height="434">
+									<span class="info"><strong class="title">Yip Yip</strong><span class="excerpt">A social app that allows users to create and view discussion threads within a 5-mile radius.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="https://github.com/byrnehollander/cs_homeworks/tree/master/hackdartmouth-1" target="_blank">
+									<img src="img/publicSphere.png" alt="" width="434" height="434">
+									<span class="info"><strong class="title">The Public Sphere</strong><span class="excerpt">An online asynchronous deliberation platform.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="photography.html" target="_blank">
+									<img src="img/scotland.jpg" alt="" width="434" height="434">
+									<span class="info"><strong class="title">Photography</strong><span class="excerpt">I've been taking pictures for about eight years. Here are a few of my favorite shots.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="https://boomsync.surge.sh/" target="_blank">
+									<img src="img/boomsync.png" alt="" width="434" height="434">
+									<span class="info"><strong class="title">BoomSync</strong><span class="excerpt">A game that teaches asynchronous JavaScript. Won first in Dartmouth HackDay II.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="http://byrnehollander.com/rhizome/" target="_blank">
+									<img src="img/rhizome.jpg" alt="" width="434" height="434">
+									<span class="info"><strong class="title">Rhizome</strong><span class="excerpt">An online essay that explores the rhizome as image of nomad thought.</span><em class="arrow-right"></em></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="box col-xs-6 col-sm-4 col-md-3">
+						<div class="thumb dark-overlay">
+							<div class="photo">
+								<a href="https://drive.google.com/open?id=0B9UCa2wfMfUMSjhsLWdJaGU1UFk" target="_blank">
+									<img src="img/factcheck.jpg" alt="" width="434" height="434">
+									<span class="info"><strong class="title">Counting the Pinocchios</strong><span class="excerpt">A research paper examining the effect of summary fact-checking data on perceived accuracy of politicians.</span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</main>
 
-  <nav role="navigation">
-    {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-      {% else %}
-        <span>&laquo;</span>
-      {% endif %}
+	<footer id="footer" role="contentinfo">
+		<div class="container">
+			<p>
+			</p>
+			<!-- <p>&copy; Byrne Hollander</p> -->
+			<p>
+				<a href="https://github.com/byrnehollander" target="_blank" class="social-link"><i class="fa fa-github"></i></a>
+				<a href="https://www.linkedin.com/in/byrnehollander" target="_blank" class="social-link"><i class="fa fa-linkedin"></i></a>
+				<a href="https://www.flickr.com/photos/114678838@N03/albums" target="_blank" class="social-link"><i class="fa fa-flickr"></i></a>
+				<a href="https://www.facebook.com/bhollander23/" target="_blank" class="social-link"><i class="fa fa-facebook"></i></a>
+			</p>
+		</div>
+	</footer>
 
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-          <em>{{ page }}</em>
-        {% elsif page == 1 %}
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-        {% else %}
-          <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-        {% endif %}
-      {% endfor %}
-
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-      {% else %}
-        <span>&raquo;</span>
-      {% endif %}
-    </div>
-    {% endif %}
-  </nav>
-
-</main>
-
-{% include footer.html %}
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+</body>
+</html>
