@@ -2494,7 +2494,8 @@ img.round {
 }
 
 #footer a.social-link {
-	font-size: 1.1428575em;
+	/*font-size: 1.1428575em;*/
+	font-size: 1.7em;
 	padding: 0.5em 1em;
 }
 
