@@ -4063,3 +4063,8 @@ img.round {
 	a, a:visited { text-decoration: underline; }
 
 }
+
+span.excerpt > a {
+	color: white;
+	text-decoration: underline;
+}
