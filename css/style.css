@@ -1231,12 +1231,12 @@ img.round {
 	letter-spacing: -1px;
 	color: #292f33;
 	position: absolute;
-	bottom: 2em;
+	bottom: 3em;
 }
 
 .thumb.featured .info .excerpt {
 	position: absolute;
-	bottom: 2em;
+	bottom: 0em;
 }
 
 .thumb.dark-overlay .info .big-title, .thumb.medium-overlay .info .big-title {
@@ -2576,7 +2576,7 @@ img.round {
 		margin-bottom: 2em;
 		max-width: 70%;
 		position: absolute;
-		bottom: 2em;
+		bottom: 0em;
 	}
 
 	.team-container {
@@ -3085,7 +3085,7 @@ img.round {
 		font-size: 2em;
 		max-width: none;
 		position: absolute;
-		bottom: 2em;
+		bottom: 1.2em;
 	}
 
 	.thumb.featured .info .excerpt {
@@ -3608,7 +3608,7 @@ img.round {
 		max-width: none;
 		line-height: 1em;
 		position: absolute;
-		bottom: 2em;
+		bottom: 1.5em;
 	}
 
 	.thumb.featured .info .excerpt {
@@ -3616,7 +3616,7 @@ img.round {
 		max-width: 80%;
 		margin-top: 2em;
 		position: absolute;
-		bottom: 2em;
+		bottom: -1em;
 	}
 
 	.owl-carousel .owl-dots {
@@ -4064,7 +4064,8 @@ img.round {
 
 }
 
-span.excerpt > a {
+.thumb .photo a {
+	display: inline;
 	color: white;
 	text-decoration: underline;
 }
