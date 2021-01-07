@@ -2568,7 +2568,7 @@ img.round {
 		max-width: 70%;
 		font-size: 4em;
 		position: absolute;
-		bottom: 3em;
+		bottom: 2em;
 	}
 
 	.thumb.featured .info .excerpt {
@@ -2576,7 +2576,7 @@ img.round {
 		margin-bottom: 2em;
 		max-width: 70%;
 		position: absolute;
-		bottom: 4em;
+		bottom: 2em;
 	}
 
 	.team-container {
@@ -3608,7 +3608,7 @@ img.round {
 		max-width: none;
 		line-height: 1em;
 		position: absolute;
-		bottom: 3em;
+		bottom: 2em;
 	}
 
 	.thumb.featured .info .excerpt {
@@ -3616,7 +3616,7 @@ img.round {
 		max-width: 80%;
 		margin-top: 2em;
 		position: absolute;
-		bottom: 4em;
+		bottom: 2em;
 	}
 
 	.owl-carousel .owl-dots {
@@ -3940,13 +3940,13 @@ img.round {
 		max-width: 80%;
 		margin-top: 0.3em;
 		position: absolute;
-		bottom: 3em;
+		bottom: 2em;
 	}
 
 	.thumb.featured .info .excerpt {
 		margin-top: 2.5em;
 		position: absolute;
-		bottom: 4em;
+		bottom: 2em;
 	}
 
 	.thumb .big-excerpt {
