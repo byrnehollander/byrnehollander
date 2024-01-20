@@ -428,5 +428,22 @@
         >, or email me at {firstName}@prosperhealth.io
       </p>
     </main>
+    <script>
+      window.onload = () => {
+        const isDarkMode =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        const style = isDarkMode
+          ? "color: lightblue; font-size: 50px;"
+          : "color: darkblue; font-size: 50px;";
+
+        console.log("%cˁ˚ᴥ˚ˀ", style);
+        console.log(
+          "%cThanks for stopping by! 👋",
+          "font-size: 18px;font-family: Helvetica, Arial, sans-serif;"
+        );
+      };
+    </script>
   </body>
 </html>
