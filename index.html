@@ -15,7 +15,7 @@
       content="Byrne Hollander is a programmer in NYC"
     />
 
-    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="shortcut icon" href="./public/favicon.png" />
     <script
       defer
       src="https://us.umami.is/script.js"
@@ -126,6 +126,8 @@
       body {
         line-height: 1.5;
         background: #f7fafc;
+        background-image: url("public/light-fleck.png");
+        background-position: 0 0;
         color: #414141;
         font-family: Adelle, Georgia, "Times New Roman", serif;
       }
@@ -343,14 +345,15 @@
         }
         body {
           background: #121212;
+          background-image: url("public/dark-fleck.png");
         }
         a {
           color: #afc7ff;
           box-shadow: rgba(25, 25, 112, 0.3) 0 -9px 0 inset;
-          border-bottom: 1.5px solid #243490;
+          border-bottom: 1.5px solid #2d1c64;
         }
         a:hover {
-          box-shadow: #243490 0 -1.2em 0 inset;
+          box-shadow: #2d1c64 0 -1.2em 0 inset;
         }
         .grey {
           color: #888888;
@@ -387,7 +390,7 @@
         <p class="grey">Software Engineer</p>
       </div>
       <img
-        src="profile.jpg"
+        src="./public/profile.jpg"
         height="200px"
         style="max-height: 50vw"
         alt="byrne hollander and dog"
