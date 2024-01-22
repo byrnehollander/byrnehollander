@@ -28,12 +28,12 @@
       <div>
         <h1>Byrne Hollander</h1>
         <p class="light">New York, NY</p>
-        <p class="gray light" style="margin-bottom:2px">Software Engineer</p>
+        <p class="gray light" style="margin-bottom: 2px">Software Engineer</p>
       </div>
       <img
         src="./public/profile.jpg"
         height="200px"
-        style="max-height:50vw"
+        style="max-height: 50vw"
         alt="byrne hollander and dog"
       />
     </div>
@@ -75,22 +75,18 @@
         but you can contact me at {firstName}@prosperhealth.io
       </p>
     </main>
-    <script>
-      window.onload = () => {
-        const isDarkMode =
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
+    <canvas
+      id="noiseCanvas"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: #f7fafc;
+      "
+    ></canvas>
 
-        const style = isDarkMode
-          ? "color: lightblue; font-size: 64px;"
-          : "color: darkblue; font-size: 64px;";
-
-        console.log("%cˁ˚ᴥ˚ˀ", style);
-        console.log(
-          "%cThanks for stopping by! 👋",
-          "font-size: 18px;font-family: Helvetica, Arial, sans-serif;"
-        );
-      };
-    </script>
+    <script>const canvas=document.getElementById("noiseCanvas"),ctx=canvas.getContext("2d");let flecks=[],backgroundColor,fleckColor,opacityRange;function setColors(){window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?(backgroundColor="#121212",fleckColor="255, 255, 255",opacityRange={min:.02,max:.2}):(backgroundColor="#f7fafc",fleckColor="0, 0, 0",opacityRange={min:.03,max:.3}),canvas.style.backgroundColor=backgroundColor}function setCanvasSize(){let a=window.devicePixelRatio||1;canvas.width=window.innerWidth*a,canvas.height=window.innerHeight*a,canvas.style.width=window.innerWidth+"px",canvas.style.height=window.innerHeight+"px",ctx.scale(a,a)}function initFlecks(){let a=Math.floor(window.innerWidth*window.innerHeight/300);flecks=[];for(let e=0;e<a;e++)flecks.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,opacity:Math.random()*(opacityRange.max-opacityRange.min)+opacityRange.min,dx:.1*Math.random()-.05,dy:.1*Math.random()-.05,dOpacity:.005*Math.random()-.0025})}function updateFleck(a){a.x+=a.dx,a.y+=a.dy,a.opacity+=a.dOpacity,a.opacity=Math.max(opacityRange.min,Math.min(a.opacity,opacityRange.max))}function draw(){ctx.clearRect(0,0,canvas.width,canvas.height),flecks.forEach(a=>{updateFleck(a),ctx.fillStyle=`rgba(${fleckColor}, ${a.opacity})`,ctx.fillRect(a.x,a.y,1,1)}),requestAnimationFrame(draw)}setCanvasSize(),setColors(),initFlecks(),draw(),window.addEventListener("resize",function(){setCanvasSize()}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",a=>{setColors()});</script>
+    <script>window.onload=()=>{let e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,o=e?"color: lightblue; font-size: 64px;":"color: darkblue; font-size: 64px;";console.log("%cˁ˚ᴥ˚ˀ",o),console.log("%cThanks for stopping by! \uD83D\uDC4B","font-size: 18px;font-family: Helvetica, Arial, sans-serif;")};</script>
   </body>
 </html>
