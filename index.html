@@ -125,7 +125,7 @@
       }
       body {
         line-height: 1.5;
-        background: url("public/light-mode-flecks.png") #f7fafc;
+        background: #f7fafc;
         font-family: Adelle, Georgia, "Times New Roman", serif;
         margin: 0 auto;
         padding: 4rem 2rem;
@@ -249,6 +249,8 @@
           2.4px 4.8px 7.4px -0.3px hsl(205deg 13% 78% / 0.21),
           5.6px 11.2px 17.3px -0.5px hsl(205deg 13% 78% / 0.33),
           12.5px 25px 38.6px -0.8px hsl(205deg 13% 78% / 0.44);
+        position: relative;
+        z-index: 10000;
       }
       h1,
       h2,
@@ -352,7 +354,7 @@
           color: #e0e0e0;
         }
         body {
-          background: url("public/dark-mode-flecks.png") rgb(0, 0, 18);
+          background: rgb(0, 0, 18);
         }
         a {
           color: #afc7ff;
@@ -395,6 +397,64 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+      }
+
+      /* Flecks overlay */
+      #flecks-overlay {
+        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      @keyframes gentle-drift {
+        0%, 100% {
+          transform: translate(0%, 0%);
+        }
+        25% {
+          transform: translate(-1.5%, 1%);
+        }
+        50% {
+          transform: translate(-0.5%, -1.5%);
+        }
+        75% {
+          transform: translate(1%, -0.5%);
+        }
+      }
+      #flecks {
+        position: absolute;
+        inset: -100%;
+        height: 300%;
+        width: 300%;
+        background-image: url("public/light-mode-flecks.png");
+        background-repeat: repeat;
+        opacity: 1;
+        animation: gentle-drift 45s ease-in-out infinite;
+      }
+      @media (prefers-color-scheme: dark) {
+        #flecks {
+          background-image: url("public/dark-mode-flecks.png");
+        }
+      }
+      @media print {
+        #flecks-overlay {
+          display: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #flecks-overlay {
+          display: none;
+        }
+        body {
+          background: #f7fafc url("public/light-mode-flecks.png");
+        }
+      }
+      @media (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark) {
+        body {
+          background: rgb(0, 0, 18) url("public/dark-mode-flecks.png");
+        }
       }
     </style>
   </head>
@@ -480,5 +540,10 @@
           );
       };
     </script>
+
+    <!-- Flecks overlay -->
+    <div id="flecks-overlay">
+      <div id="flecks"></div>
+    </div>
   </body>
 </html>
