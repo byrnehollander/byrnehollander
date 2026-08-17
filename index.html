@@ -462,10 +462,24 @@
         >
       </p>
       <p class="gray light italic" style="font-size: 0.9rem">
-        *He's 92 years old and still arranging new music!
+        *He's <span id="grandpa-age">93</span> years old and still arranging
+        new music!
       </p>
     </main>
     <script>
+      // Keep Grandpa's age current: born August 3, 1933.
+      (() => {
+        const birth = { year: 1933, month: 8, day: 3 };
+        const now = new Date();
+        let age = now.getFullYear() - birth.year;
+        const hadBirthday =
+          now.getMonth() + 1 > birth.month ||
+          (now.getMonth() + 1 === birth.month && now.getDate() >= birth.day);
+        if (!hadBirthday) age -= 1;
+        // Clamp so a wrong device clock never shows something silly.
+        age = Math.min(100, Math.max(93, age));
+        document.getElementById("grandpa-age").textContent = age;
+      })();
       window.onload = () => {
         let e =
             window.matchMedia &&
