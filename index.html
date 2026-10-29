@@ -396,6 +396,51 @@
         align-items: flex-end;
         justify-content: space-between;
       }
+
+      /* ---- Hour ----------------------------------------------------------
+         The background is tinted like daylight at the visitor's local time.
+         The script at the bottom of <body> sets --hour-* (a top/middle/bottom
+         gradient per color scheme) and data-phase on <html>. Without JS the
+         defaults reproduce the original flat colors. Nothing moves; a 2s
+         blend runs only when the hour is recomputed (every 10 min / on
+         tab focus). The flecks grain stays layered on top. */
+      @property --hour-l1 { syntax: "<color>"; inherits: false; initial-value: #f7fafc; }
+      @property --hour-l2 { syntax: "<color>"; inherits: false; initial-value: #f7fafc; }
+      @property --hour-l3 { syntax: "<color>"; inherits: false; initial-value: #f7fafc; }
+      @property --hour-d1 { syntax: "<color>"; inherits: false; initial-value: #000012; }
+      @property --hour-d2 { syntax: "<color>"; inherits: false; initial-value: #000012; }
+      @property --hour-d3 { syntax: "<color>"; inherits: false; initial-value: #000012; }
+      html {
+        min-height: 100%;
+        background: url("public/light-mode-flecks.png"),
+          linear-gradient(var(--hour-l1, #f7fafc), var(--hour-l2, #f7fafc) 45%, var(--hour-l3, #f7fafc))
+            no-repeat var(--hour-l3, #f7fafc);
+      }
+      body {
+        background: none;
+      }
+      html[data-hour-live] {
+        transition: 2s ease;
+        transition-property: --hour-l1, --hour-l2, --hour-l3, --hour-d1, --hour-d2, --hour-d3;
+      }
+      @media (prefers-color-scheme: dark) {
+        html {
+          background: url("public/dark-mode-flecks.png"),
+            linear-gradient(var(--hour-d1, #000012), var(--hour-d2, #000012) 45%, var(--hour-d3, #000012))
+              no-repeat var(--hour-d3, #000012);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html[data-hour-live] {
+          transition: none;
+        }
+      }
+      @media print {
+        html,
+        body {
+          background: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -479,6 +524,67 @@
         // Clamp so a wrong device clock never shows something silly.
         age = Math.min(100, Math.max(93, age));
         document.getElementById("grandpa-age").textContent = age;
+      })();
+      // Hour: tint the background like the sky at the visitor's local time.
+      // Test any time with ?hour=18&minute=30.
+      (() => {
+        const root = document.documentElement;
+        const names = ["night", "dawn", "day", "dusk", "evening"];
+        const starts = [0, 300, 480, 1020, 1200, 1440]; // minutes after midnight
+        const BLEND = 45; // minutes either side of a phase boundary
+        // Hand-tuned top / middle / bottom stops per phase (l = light, d = dark).
+        const P = {
+          l: [
+            ["#eff2f7", "#f1f4f8", "#f3f5f9"],
+            ["#ebf1f8", "#f5f3f1", "#fbefe4"],
+            ["#f9f8f3", "#faf9f4", "#f9f6ee"],
+            ["#f3f0f5", "#f9f0ea", "#fbebe2"],
+            ["#f1eef7", "#f2eff6", "#f4f0f4"],
+          ],
+          d: [
+            ["#000012", "#000012", "#02031a"],
+            ["#051c25", "#04101e", "#020619"],
+            ["#0a1227", "#091024", "#080d20"],
+            ["#03051b", "#0a0920", "#22151b"],
+            ["#0b0a25", "#080820", "#05051a"],
+          ],
+        };
+        const q = new URLSearchParams(location.search);
+        const mix = (a, b, w) =>
+          "rgb(" +
+          [1, 3, 5].map((i) =>
+            Math.round(parseInt(a.substr(i, 2), 16) * (1 - w) + parseInt(b.substr(i, 2), 16) * w)
+          ) +
+          ")";
+        const apply = () => {
+          const now = new Date();
+          const qh = parseFloat(q.get("hour"));
+          const t = qh >= 0
+            ? (Math.floor(qh) * 60 + (parseFloat(q.get("minute")) || 0)) % 1440
+            : now.getHours() * 60 + now.getMinutes();
+          let i = 0;
+          while (t >= starts[i + 1]) i++;
+          // Near a boundary, cross-fade toward the neighbouring phase (50/50 at the boundary).
+          let j = i, w = 0;
+          if (t - starts[i] < BLEND) {
+            j = (i + 4) % 5;
+            w = 0.5 - (t - starts[i]) / (2 * BLEND);
+          } else if (starts[i + 1] - t < BLEND) {
+            j = (i + 1) % 5;
+            w = 0.5 - (starts[i + 1] - t) / (2 * BLEND);
+          }
+          for (const s of ["l", "d"])
+            for (let k = 0; k < 3; k++)
+              root.style.setProperty(`--hour-${s}${k + 1}`, mix(P[s][i][k], P[s][j][k], w));
+          root.setAttribute("data-phase", names[i]);
+        };
+        apply();
+        // Only allow the 2s blend after the first paint, so loading never animates.
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => root.setAttribute("data-hour-live", ""))
+        );
+        document.addEventListener("visibilitychange", () => document.hidden || apply());
+        setInterval(apply, 6e5);
       })();
       window.onload = () => {
         let e =
