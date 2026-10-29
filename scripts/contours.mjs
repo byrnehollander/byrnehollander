@@ -178,14 +178,30 @@ function toPath(pts) {
   return d;
 }
 
-const LAYERS = LEVELS.map((level, k) => {
-  const d = trace(level)
+// Draw-on reveal (see the .contours CSS): every path gets pathLength="1" so a
+// dash of length 1 can be slid along it without measuring, plus a --d delay.
+// Order, like a plotter sketching the terrain: the index contours (the
+// stronger lines) go down first, highest first, INDEX_STEP apart; then the
+// rest follow from the crests outward (highest level first), spread evenly
+// from REST_FROM to REST_TO seconds.
+const INDEX_STEP = 0.12, REST_FROM = 0.35, REST_TO = 1.1;
+const isIndex = (k) => (k + 1) % INDEX_EVERY === 0;
+const traced = LEVELS.map((level, k) => ({
+  k,
+  d: trace(level)
     .map(resample)
     .filter(({ total, closed }) => total >= (closed ? MIN_LOOP : 90))
     .map(({ pts }) => toPath(pts))
-    .join('');
-  return d && `<path${(k + 1) % INDEX_EVERY === 0 ? ' class="i"' : ''} d="${d}"/>`;
-}).filter(Boolean);
+    .join(''),
+})).filter(({ d }) => d);
+const idx = traced.map(({ k }) => k).filter(isIndex).reverse();
+const rest = traced.map(({ k }) => k).filter((k) => !isIndex(k)).reverse();
+const secs = (n) => String(+n.toFixed(2)).replace(/^0\./, '.');
+const delay = (k) => isIndex(k)
+  ? secs(INDEX_STEP * idx.indexOf(k))
+  : secs(REST_FROM + ((REST_TO - REST_FROM) * rest.indexOf(k)) / (rest.length - 1));
+const LAYERS = traced.map(({ k, d }) =>
+  `<path${isIndex(k) ? ' class="i"' : ''} pathLength="1" style="--d:${delay(k)}s" d="${d}"/>`);
 
 const out =
   `<svg class="map" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice">\n<g id="topo">\n` +
