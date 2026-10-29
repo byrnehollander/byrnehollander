@@ -1,33 +1,43 @@
 // Generates the topographic contour paths used as the page background
-// (the two <svg> elements inside <div class="contours"> in index.html).
+// (the three <svg> elements inside <div class="contours"> in index.html).
 //
 // Usage: node scripts/contours.mjs > /tmp/contours.svg
 //
-// How it works: build a small elevation field (a few skewed Gaussian
-// "peaks", domain-warped by smooth value noise so the rings wobble
-// together), trace iso-lines with marching squares, resample each loop
-// to a handful of points and emit it as a closed Catmull-Rom spline
-// (one `C`, then `s` segments). Every 5th level gets class "i" (index
-// contour). Tweak PEAKS / LEVELS / SEED and paste the output back in.
-// No dependencies; deterministic for a given SEED.
+// How it works: build an elevation field from a few curving ridges (each
+// a spine polyline with a height and half-width that vary along it, so
+// crests rise and dip and two ridges that meet leave a saddle), plus a
+// gentle regional slope, all domain-warped by smooth value noise so
+// neighbouring lines wobble together. Trace iso-lines with marching
+// squares, resample each line to a handful of points and emit it as a
+// Catmull-Rom spline (one `C`, then `s` segments). Every 5th level gets
+// class "i" (index contour). Short closed loops are dropped so the map
+// reads as long ridges, not a field of bullseyes. Tweak RIDGES / LEVELS /
+// SEED and paste the output back in. No dependencies; deterministic.
 
 const W = 1600, H = 1000; // viewBox
 const PAD = 560; // field extends past the viewBox so loops close off-screen
 const STEP = 8; // grid resolution in viewBox units
-const SPACING = 84; // target distance between spline points
-const SEED = 7;
+const SPACING = 108; // target distance between spline points
+const MIN_LOOP = 260; // drop closed loops shorter than this (viewBox units)
+const SEED = 11;
 
-// x, y, height, radius x, radius y, rotation (rad), skew (0 = symmetric)
-const PEAKS = [
-  [250, 650, 1.0, 330, 250, -0.5, 0.35], // west summit
-  [1390, 280, 0.82, 280, 220, 0.4, 0.3], // east summit
-  [1520, 980, 0.55, 220, 170, -0.2, 0.25], // south-east knoll
-  [800, 1240, 0.62, 520, 230, 0.05, 0.1], // shoulder off the bottom edge
-  [780, -230, 0.55, 520, 220, -0.08, 0.1], // shoulder off the top edge
+// Each ridge: spine points [x, y, crest height, half-width]. Height and
+// width are interpolated along the spine; ends are rounded.
+const RIDGES = [
+  // west: a long main ridge curving down the left margin with a long, level crest
+  [[-260, 20, 0.42, 200], [30, 220, 0.8, 165], [210, 470, 0.97, 150], [250, 700, 0.93, 155], [120, 1000, 0.6, 190], [0, 1250, 0.4, 220]],
+  // west spur dropping south-east off the main crest
+  [[230, 560, 0.45, 110], [450, 720, 0.4, 130], [620, 980, 0.3, 160]],
+  // east: a long crest rising from the south, dipping to a saddle, rising again toward the top-right corner
+  [[1150, 1220, 0.4, 200], [1280, 970, 0.84, 140], [1370, 790, 0.82, 130], [1460, 640, 0.5, 115], [1640, 380, 0.82, 160], [1900, 250, 0.6, 220]],
+  // north-east: a low broad shoulder sweeping along the top edge, well clear of the photo
+  [[1050, -280, 0.28, 300], [1450, -80, 0.42, 250], [1900, 0, 0.45, 250]],
 ];
 const LEVELS = Array.from({ length: 16 }, (_, k) => 0.07 + k * 0.058);
 const INDEX_EVERY = 5;
-const FOOT = '1150 820 450 180'; // viewBox of the mobile footer strip
+// narrow screens show two windows onto the same map (viewBox x y w h)
+const TOP = '1150 700 450 210'; // above the heading: the east crest's long summit loops
+const FOOT = '200 760 560 240'; // below the footnote: the nose of the west spur
 
 // ---- seeded value noise ----
 let s = SEED;
@@ -42,19 +52,25 @@ function noise(x, y) {
   return (a + (b - a) * fx + (c - a) * fy + (a - b - c + d) * fx * fy) * 2 - 1;
 }
 
-function field(x, y) {
-  // domain warp: neighbouring rings bend the same way
-  const wx = x + 70 * noise(x / 380, y / 380) + 25 * noise(x / 150 + 9, y / 150);
-  const wy = y + 70 * noise(x / 380 + 31, y / 380 + 17) + 25 * noise(x / 150, y / 150 + 5);
-  let v = 0;
-  for (const [px, py, h, rx, ry, rot, skew] of PEAKS) {
-    const dx = wx - px, dy = wy - py;
-    const u = (dx * Math.cos(rot) + dy * Math.sin(rot)) / rx;
-    const w = (-dx * Math.sin(rot) + dy * Math.cos(rot)) / ry;
-    const ang = Math.atan2(w, u);
-    const r2 = (u * u + w * w) * (1 + skew * Math.cos(ang - 0.8)) ** 2;
-    v = Math.max(v, h * Math.exp(-r2)); // max(): peaks stay distinct
+// nearest point on a ridge spine: distance and interpolated height / width
+function ridge(spine, x, y) {
+  let best = { d2: Infinity, h: 0, w: 1 };
+  for (let k = 0; k < spine.length - 1; k++) {
+    const [ax, ay, ah, aw] = spine[k], [bx, by, bh, bw] = spine[k + 1];
+    const vx = bx - ax, vy = by - ay;
+    const t = Math.max(0, Math.min(1, ((x - ax) * vx + (y - ay) * vy) / (vx * vx + vy * vy)));
+    const dx = x - (ax + t * vx), dy = y - (ay + t * vy), d2 = dx * dx + dy * dy;
+    if (d2 < best.d2) best = { d2, h: ah + t * (bh - ah), w: aw + t * (bw - aw) };
   }
+  return best.h * Math.exp(-best.d2 / (best.w * best.w));
+}
+
+function field(x, y) {
+  // domain warp: neighbouring lines bend the same way
+  const wx = x + 80 * noise(x / 420, y / 420) + 22 * noise(x / 140 + 9, y / 140);
+  const wy = y + 80 * noise(x / 420 + 31, y / 420 + 17) + 22 * noise(x / 140, y / 140 + 5);
+  let v = 0.03 * noise(wx / 600 + 3, wy / 600 + 7); // broad, low undulation (stays under the lowest level)
+  for (const spine of RIDGES) v += ridge(spine, wx, wy);
   return v;
 }
 
@@ -117,7 +133,9 @@ function resample(loop) {
     const [ax, ay] = loop[i], [bx, by] = loop[(i + 1) % loop.length];
     out.push([ax + f * (bx - ax), ay + f * (by - ay)]);
   }
-  return { pts: out, total };
+  // fully on-screen loops are the ones that read as bullseyes
+  const closed = loop.every(([x, y]) => x > 0 && x < W && y > 0 && y < H);
+  return { pts: out, total, closed };
 }
 
 const num = (n) => String(Math.round(n));
@@ -163,7 +181,7 @@ function toPath(pts) {
 const LAYERS = LEVELS.map((level, k) => {
   const d = trace(level)
     .map(resample)
-    .filter(({ total }) => total >= 90)
+    .filter(({ total, closed }) => total >= (closed ? MIN_LOOP : 90))
     .map(({ pts }) => toPath(pts))
     .join('');
   return d && `<path${(k + 1) % INDEX_EVERY === 0 ? ' class="i"' : ''} d="${d}"/>`;
@@ -172,7 +190,8 @@ const LAYERS = LEVELS.map((level, k) => {
 const out =
   `<svg class="map" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice">\n<g id="topo">\n` +
   LAYERS.join('\n') + '\n</g>\n</svg>\n' +
-  // narrow screens: a second window onto the same map for the footer band
+  // narrow screens: two more windows onto the same paths for the top and bottom bands
+  `<svg class="top" viewBox="${TOP}" preserveAspectRatio="xMidYMin slice"><use href="#topo"/></svg>\n` +
   `<svg class="foot" viewBox="${FOOT}" preserveAspectRatio="xMidYMax slice"><use href="#topo"/></svg>`;
 process.stdout.write(out + '\n');
 process.stderr.write(`${LAYERS.length} levels, ${out.length} bytes\n`);
